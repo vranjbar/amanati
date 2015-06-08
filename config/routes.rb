@@ -1,6 +1,9 @@
 Amanati::Application.routes.draw do
-  get "main_pages/home"
-  get "main_pages/about"
+
+  root 'main_pages#home'
+
+  match ':controller(/:action(/:id(.:format)))', :via => :get
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
