@@ -11,10 +11,10 @@
 development:
   adapter: mysql2
   encoding: utf8
-  database: #Amanati_development
+  database: amanati_development
   pool: 5
   username: root
-  password: 123457
+  password: password
   host: localhost
 
 # Warning: The database defined as "test" will be erased and
@@ -23,16 +23,16 @@ development:
 test:
   adapter: mysql2
   encoding: utf8
-  database: Amanati_test
+  database: amanati_test
   pool: 5
   username: root
-  password: 
+  password: password
   host: localhost
 
 production:
   adapter: mysql2
   encoding: utf8
-  database: Amanati_production
+  database: amanati_production
   pool: 5
   username: root
   password: 
