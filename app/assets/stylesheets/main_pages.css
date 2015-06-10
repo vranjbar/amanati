@@ -1,0 +1,57 @@
+body {
+    background-color: #b00e1d;
+	font-family: 'nassim';
+}
+.btn-login:hover{
+	background-color:rgb(131, 131, 131) !important;
+}
+
+button.btn-login{
+  background-color: silver;
+  width: 100px;
+}
+
+@font-face {
+  font-family: 'nassim';
+  font-weight: normal;
+  font-style: normal;
+  src:url('/assets/nassim-regular.eot');
+  src:url('/assets/nassim-regular.eot') format('eot'),
+    url('/assets/nassim-regular.woff') format('woff'),
+    url('/assets/nassim-regular.ttf') format('truetype');
+}
+
+.navbar-default .navbar-nav > li > a {
+  font-size: 12pt;
+}
+
+.header-nav-ul{
+	float:right;
+	padding-right: 150px; 
+	padding-left: 15px;  
+	margin-right: auto; 
+	margin-left: auto;"
+}
+
+.main-container{
+	
+	padding-top: 100px;
+	height:800px; 
+	width:80%; 
+	background-color:#f3f3f3; 
+	margin-top:-20px; 
+	-moz-box-shadow: 0 0 10px 10px #888; 
+	-webkit-box-shadow: 0 0 10px 10px #888; 
+	box-shadow: 0 0 10px 10px #888;
+}
+
+.row-footer{
+	background-color:#f3f3f3; margin-top:-20px; height:70px;
+	font-size:13pt;  padding-top: 20px; 
+}
+
+.nav-footer{
+	padding: 10px;
+	color:grey;
+	font-weight: bold;
+}

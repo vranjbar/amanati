@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <title>:::Amanati امانتی::: | <%= @page_title || "Admin" %> </title>
+	    <%= stylesheet_link_tag 'application', media: 'all',
+	                                           'data-turbolinks-track' => true %>
+	    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	    <%= csrf_meta_tags %>
+	    <!--[if lt IE 9]>
+	      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
+	      </script>
+	    <![endif]-->
+	</head>
+	<body>
+		<!-- row 1: Header !-->
+		<header class = "row">
+			<nav  class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
+		    	<ul class="nav navbar-nav header-nav-ul">
+		        	<li style="margin-top:30px;"><h4 style="color:#FFFFFF">فرصتی برای کسب درآمد و دسترسی به وسایل مورد نیاز با کمترین هزینه</h4></li> 
+		        	<li><h1 style="color:silver; margin-top:30px;">امانتی</h1></li> 
+		        	<li><%= link_to image_tag("nav-icon.png", :width=>'64', :height=>'64', :alt=> 'navbar logo'), {:action => 'home', :controller => 'main_pages'} %></li>
+		        </ul> 
+	    	
+				<div class="btn-group" role="group" style="margin-top:30px; margin-left:150px">
+				  <button type="button" class="btn btn-default dropdown-toggle btn-login">
+				  	<%= image_tag("signup-icon.png", :width=>'24', :height=>'24', :alt=> 'navbar logo') %>
+					<span style="color:#FFFFFF">ثبت نام</span>
+				  	</button>
+				  <button type="button" class="btn btn-default dropdown-toggle btn-login">
+					<span style="color:#FFFFFF">ورود</span>
+					<%= image_tag("login-icon.png", :width=>'24', :height=>'24', :alt=> 'navbar logo') %>
+				  </button>
+				</div>
+			</nav>
+
+		</header>
+
+
+
+		<!-- row 2: Body !-->
+		<div class="container main-container">
+				<div class="panel-body" style="margin:0px -16px -5px -16px;">		
+						<%= yield %>		
+				</div>
+			
+		</div>
+		
+
+
+		<!-- row 3: Footer !-->
+		<footer class="row">
+			<nav class="navbar navbar-default nav-footer" role= "navigation">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="collapse">
+			    	<ul class="nav navbar-nav" style=" float:right; padding-right: 150px; padding-left: 15px;  margin-right: auto;  margin-left: auto;">
+			        	<li><a href="#">تماس با ما</a></li>
+			        	<li><a href="#">درباره ما</a></li>
+			        	<li><a href="#">ثبت آگهی</a></li>
+			        	<li><a href="#">جستجو</a></li>
+			        	<li><a href="#">خانه</a></li>  
+			        </ul> 
+
+			    	<div style="margin-left:150px; padding-top:2px">
+			    		<span style="font-size:16pt">امانتی</span>
+			    		 <%= link_to image_tag("nav-icon.png", :width=>'48', :height=>'48', :alt=> 'navbar logo'), {:action => 'home', :controller => 'main_pages'} %>
+			    	</div>			        
+		    	</div>
+
+			</nav>
+			<div class="row row-footer">
+					<div class="col-md-3 col-md-offset-1" >
+						<span>Copyright © 2015 - 2016 amanati.ir</span>
+					</div>
+					<div class="col-md-offset-1 col-md-6 col-md-offset-1" style="text-align:right">
+						<span>کلیه حقوق این سایت متعلق به امانتی است.</span>
+					</div>
+			</div>
+		  
+		</footer>
+	
+	</body>
+</html>

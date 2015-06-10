@@ -1,5 +1,5 @@
 class MainPagesController < ApplicationController
-	layout false
+layout "main_layout"
   def home
   end
 
