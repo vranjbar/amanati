@@ -11,6 +11,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20150610080721) do
+
+  create_table "categories", force: true do |t|
+    t.string   "name",       limit: 100, default: "", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "comments", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "product_id"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["product_id"], name: "index_comments_on_product_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
+
+  create_table "products", force: true do |t|
+    t.string   "name",         limit: 75
+    t.integer  "category_id"
+    t.integer  "user_id"
+    t.text     "description"
+    t.integer  "price",                    default: 0,  null: false
+    t.string   "city",         limit: 20
+    t.string   "address",      limit: 150
+    t.string   "phone_number", limit: 15
+    t.string   "email",                    default: "", null: false
+    t.integer  "rank"
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "products", ["category_id"], name: "index_products_on_category_id", using: :btree
+  add_index "products", ["user_id"], name: "index_products_on_user_id", using: :btree
+
+  create_table "users", force: true do |t|
+    t.string   "name",            limit: 75
+    t.string   "user_name",       limit: 25,  default: "", null: false
+    t.string   "hashed_password", limit: 40,  default: "", null: false
+    t.string   "email",                       default: "", null: false
+    t.string   "province",        limit: 20
+    t.string   "city",            limit: 20
+    t.string   "address",         limit: 150
+    t.string   "phone_number",    limit: 15
+    t.string   "image",           limit: 100
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
