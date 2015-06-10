@@ -1,3 +1,85 @@
 <% @page_title = "Home" %>
-<h1>MainPages#home</h1>
-<p>Find me in app/views/main_pages/home.html.erb</p>
+<div class="container home-container">
+    <div class="row" style="width: auto">
+            <div class="col-md-1" style="text-align:center; margin: 35px;" >
+                <div id="circle1"><span  style="font-weight:bold;">ارومیه</span><br><span>علی: من برای مراسم عروسی یک کت و شلوار با امانتی، امانت گرفتم.</span></div>
+                <div id="circle3"><span  style="font-weight:bold;">ایلام</span><br><span>سینا: من هر هفته با امانتی یک کتاب جدید برای مطالعه امانت می گیرم.</span></div>
+            </div> 
+            <div class="col-md-5" style="text-align:center" >
+                <h3>امانتی، قابل استفاده در سراسر ایران</h3>
+                <span>
+                    <%= image_tag("map.png", :width=>'420', :alt=> 'car logo') %>
+                </span>
+            </div>
+            <div class="col-md-1" style="text-align:center; margin: 20px; " >
+                <div id="circle2"><span style="font-weight:bold;">مشهد</span><br><span>امیر: من به کمک  امانتی برای جشن تولدم براحتی دوربین عکاسی امانت گرفتم.</span></div>
+                <div id="circle4"><span style="font-weight:bold">زاهدان</span><br><span>مسعود: من از طریق امانتی تو تعطیلات عید با یه قیمت کم  خونه اجاره کردم.</span></div>                
+            </div>             
+            <div class=" col-md-3 pull-right" style="text-align:right; margin-top:20px">
+              <div class="panel panel-default">
+                <div class="panel-heading" style="text-align: center">
+                    <h4>آیا میدونستی میتونی به کمک امانتی از وسایل بلا استفاده خودت پول دربیاری؟</h4>
+                </div>
+                <div class="panel-body" style="text-align:center">
+                    <div class="row">
+                        <div class="col-md-6"> <%= image_tag("car.png", :width=>'64', :height=>'64', :alt=> 'car logo') %> </div>
+                        <div class="col-md-6"> <%= image_tag("home.png", :width=>'64', :height=>'64', :alt=> 'car logo') %> </div>
+                    </div>
+                    <div class="row"  style="margin:20px 0px 20px 0px">
+                        <div class="col-md-6"> <%= image_tag("clothes.png", :width=>'64', :height=>'64', :alt=> 'car logo') %> </div>
+                        <div class="col-md-6"> <%= image_tag("book.png", :width=>'64', :height=>'64', :alt=> 'car logo') %> </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6"> <%= image_tag("homeEquip.png", :width=>'74', :height=>'64', :alt=> 'car logo') %> </div>
+                        <div class="col-md-6"> <%= image_tag("camera.png", :width=>'64', :height=>'64', :alt=> 'car logo') %> </div>
+                    </div>                                        
+                </div>
+              </div>
+            </div>
+    </div>
+
+    <hr style="width:100%; height:2px; background: #fff"><hr/>
+
+    <div class="row" style="text-align:center;">
+        <h3>اهل کدوم شهری؟</h3>
+
+            <span style="font-size: 13pt; margin-top:-40px;">
+                <%= link_to("اراک", {:action=>'home', :city=>"اراک"}) %> - 
+                <%= link_to("اردبیل", {:action=>'home', :city=>"اردبیل"}) %> - 
+                <%= link_to("ارومیه", {:action=>'home', :city=>"ارومیه"}) %> - 
+                <%= link_to("اصفهان", {:action=>'home', :city=>"اصفهان"}) %> - 
+                <%= link_to("اهواز", {:action=>'home', :city=>"اهواز"}) %> - 
+                <%= link_to("ایلام", {:action=>'home', :city=>"ایلام"}) %> - 
+                <%= link_to("بجنورد", {:action=>'home', :city=>"بجنورد"}) %> - 
+                <%= link_to("بندرعباس", {:action=>'home', :city=>"بندرعباس"}) %> - 
+                <%= link_to("بوشهر", {:action=>'home', :city=>"بوشهر"}) %> - 
+                <%= link_to("بیرجند", {:action=>'home', :city=>"بیرجند"}) %>
+            </br>
+                <%= link_to("تبریز", {:action=>'home', :city=>"تبریز"}) %> - 
+                <%= link_to("تهران", {:action=>'home', :city=>"تهران"}) %> - 
+                <%= link_to("خرم آباد", {:action=>'home', :city=>"خرم آباد"}) %> - 
+                <%= link_to("رشت", {:action=>'home', :city=>"رشت"}) %> - 
+                <%= link_to("زاهدان", {:action=>'home', :city=>"زاهدان"}) %> - 
+                <%= link_to("زنجان", {:action=>'home', :city=>"زنجان"}) %> - 
+                <%= link_to("ساری", {:action=>'home', :city=>"ساری"}) %> - 
+                <%= link_to("سمنان", {:action=>'home', :city=>"سمنان"}) %> - 
+                <%= link_to("سنندج", {:action=>'home', :city=>"سنندج"}) %> - 
+                <%= link_to("شهرکرد", {:action=>'home', :city=>"شهرکرد"}) %>            
+            </br>
+                <%= link_to("شیراز", {:action=>'home', :city=>"شیراز"}) %> - 
+                <%= link_to("قزوین", {:action=>'home', :city=>"قزوین"}) %> - 
+                <%= link_to("قم", {:action=>'home', :city=>"قم"}) %> - 
+                <%= link_to("کرج", {:action=>'home', :city=>"کرج"}) %> - 
+                <%= link_to("کرمان", {:action=>'home', :city=>"کرمان"}) %> - 
+                <%= link_to("کرمانشاه", {:action=>'home', :city=>"کرمانشاه"}) %> - 
+                <%= link_to("گرگان", {:action=>'home', :city=>"گرگان"}) %> - 
+                <%= link_to("مشهد", {:action=>'home', :city=>"مشهد"}) %> - 
+                <%= link_to("همدان", {:action=>'home', :city=>"همدان"}) %> - 
+                <%= link_to("یاسوج", {:action=>'home', :city=>"یاسوج"}) %>
+            </br>
+                <%= link_to("یزد", {:action=>'home', :city=>"یزد"}) %>            
+        </span>
+  
+    </div>
+
+</div>
