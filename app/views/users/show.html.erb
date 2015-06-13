@@ -1,0 +1,34 @@
+<div class="users show">
+	<h2> Show User </h2>
+
+	<table summary = "User detail view">
+		<tr>
+			<th>نام کاربری</th>
+			<td><%= @user.user_name %></td>
+		</tr>
+		<tr>
+			<th>نام و نام خانوادگی</th>
+			<td><%= @user.name %></td>
+		</tr>
+		<tr>
+			<th>رایانامه</th>
+			<td><%= @user.email %></td>
+		</tr>
+		<tr>
+			<th>استان</th>
+			<td><%= @user.province %></td>
+		</tr>
+		<tr>
+			<th>شهر</th>
+			<td><%= @user.city %></td>
+		</tr>
+		<tr>
+			<th>آدرس</th>
+			<td><%= @user.address %></td>
+		</tr>
+		<tr>
+			<th>شماره تماس</th>
+			<td><%= @user.phone_number %></td>
+		</tr>
+	</table>
+</div>

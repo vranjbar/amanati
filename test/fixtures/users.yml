@@ -4,8 +4,12 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-#  column: value
+example_user:
+  user_name: exm_user	
+  name: Example User
+  email: user@example.ir
+  hashed_password: password
+  phone_number: 09125365588
+  # admin: true
+  # activated: true
+  # activated_at: <%= Time.zone.now %>

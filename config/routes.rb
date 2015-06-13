@@ -1,5 +1,9 @@
 Amanati::Application.routes.draw do
 
+  # get "users/show"
+  # get "users/new"
+  # get "users/edit"
+  # get "users/delete"
   root 'main_pages#home'
 
   match ':controller(/:action(/:id(.:format)))', :via => :get
