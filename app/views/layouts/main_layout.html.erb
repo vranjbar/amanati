@@ -57,11 +57,11 @@
 				</div>
 				<div class="collapse navbar-collapse" id="collapse">
 			    	<ul class="nav navbar-nav" style=" float:right; padding-right: 150px; padding-left: 15px;  margin-right: auto;  margin-left: auto;">
-			        	<li><a href="#">تماس با ما</a></li>
-			        	<li><a href="#">درباره ما</a></li>
-			        	<li><a href="#">ثبت آگهی</a></li>
-			        	<li><a href="#">جستجو</a></li>
-			        	<li><a href="#">خانه</a></li>  
+			        	<li><%= link_to("تماس با ما", {:controller=>'main_pages', :action=>'contact'}) %></li>
+			        	<li><%= link_to("درباره ما", {:controller=>'main_pages', :action=>'about'}) %></li>
+			        	<li><%= link_to("ثبت آگهی", {:controller=>'main_pages', :action=>'add_advertisement'}) %></li>
+			        	<li><%= link_to("جستجو", {:controller=>'main_pages', :action=>'search'}) %></li>
+			        	<li><%= link_to("خانه", {:controller=>'main_pages', :action=>'home'}) %></li>  
 			        </ul> 
 
 			    	<div style="margin-left:150px; padding-top:2px; text-align: left">
