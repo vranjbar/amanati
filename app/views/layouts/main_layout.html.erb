@@ -21,7 +21,7 @@
 		        	<li><%= link_to image_tag("nav-icon.png", :width=>'64', :height=>'64', :alt=> 'navbar logo'), {:action => 'home', :controller => 'main_pages'} %></li>
 		        </ul> 
 	    	
-				<div class="btn-group" role="group" style="margin-top:30px; margin-left:150px">
+				<div class="btn-group" role="group" style="margin-top:30px; margin-right:150px">
 				  <button type="button" class="btn btn-default dropdown-toggle btn-login">
 				  	<%= image_tag("signup-icon.png", :width=>'24', :height=>'24', :alt=> 'navbar logo') %>
 					<span style="color:#FFFFFF">ثبت نام</span>
@@ -39,10 +39,7 @@
 
 		<!-- row 2: Body !-->
 		<div class="container main-container">
-				<div class="panel-body" style="margin:0px -16px -5px -16px;">		
-						<%= yield %>		
-				</div>
-			
+			<%= yield %>		
 		</div>
 		
 
@@ -67,9 +64,9 @@
 			        	<li><a href="#">خانه</a></li>  
 			        </ul> 
 
-			    	<div style="margin-left:150px; padding-top:2px">
-			    		<span style="font-size:16pt">امانتی</span>
+			    	<div style="margin-left:150px; padding-top:2px; text-align: left">
 			    		 <%= link_to image_tag("nav-icon.png", :width=>'48', :height=>'48', :alt=> 'navbar logo'), {:action => 'home', :controller => 'main_pages'} %>
+			    		 <span style="font-size:16pt">امانتی</span>
 			    	</div>			        
 		    	</div>
 

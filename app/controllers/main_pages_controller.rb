@@ -1,8 +1,10 @@
 class MainPagesController < ApplicationController
 layout "main_layout"
-  def home
+  
+  def home 
   end
 
+  
   def about
   end
 

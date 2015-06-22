@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails amanati: development" uuid="3be3722c-1ae7-45a8-b3b4-da9ad0bb875b">
+      <first-sync>true</first-sync>
+      <user-name>root</user-name>
+      <user-password>dfdadfcbdfd9dfd9dfdddfc5dfd8dfce</user-password>
+    </data-source>
+    <data-source name="Rails amanati: test" uuid="a4c89077-ddb2-44b1-9c86-54bd7c886f74">
+      <first-sync>true</first-sync>
+      <user-name>root</user-name>
+      <user-password>dfdadfcbdfd9dfd9dfdddfc5dfd8dfce</user-password>
+    </data-source>
+    <data-source name="Rails amanati: production" uuid="24f7430f-7a16-4b17-be05-8bfb7ae01b7c">
+      <first-sync>true</first-sync>
+      <user-name>root</user-name>
+      <user-password>dfdadfcbdfd9dfd9dfdddfc5dfd8dfce</user-password>
+    </data-source>
+  </component>
+</project>

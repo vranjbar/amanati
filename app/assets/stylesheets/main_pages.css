@@ -1,6 +1,7 @@
 body {
-    background-color: #b00e1d;
+    background-color: #e0e6ff;
 	font-family: 'nassim';
+	 direction: rtl
 }
 .btn-login:hover{
 	background-color:rgb(131, 131, 131) !important;
@@ -34,9 +35,9 @@ button.btn-login{
 }
 
 .main-container{
-	
-	padding-top: 100px;
-	height:800px; 
+	padding-top: 120px;
+	padding-bottom: 20px;
+	height:100%;
 	width:80%; 
 	background-color:#f3f3f3; 
 	margin-top:-20px; 
@@ -54,4 +55,58 @@ button.btn-login{
 	padding: 10px;
 	color:grey;
 	font-weight: bold;
+}
+
+.home-container{
+	margin: 20px 0px 0px 10px; 
+	width: auto;
+}
+
+#circle1 {
+	border-radius: 50%;
+    border-style: solid;
+    border-color: #000;
+	border-width: 1px;	
+	width: 110px;
+	height: 110px;
+  
+	background: rgba(134, 241, 90, 0.76);
+   margin-top:-30px;
+}
+
+#circle2 {
+	border-radius: 50%;
+    border-style: solid;
+    border-color: #000;
+	border-width: 1px;
+	width: 125px;
+	height: 120px; 
+  
+	background: rgba(255, 252, 0, 0.61);
+  padding:10px;
+}
+
+#circle3 {
+	border-radius: 50%;
+    border-style: solid;
+    border-color: #000;
+	border-width: 1px;	
+	width: 120px;
+	height: 120px; 
+  
+	background: rgba(255, 156, 0, 0.59);
+  margin-top: 50px;
+   padding:10px;
+}
+
+#circle4 {
+	border-radius: 50%;
+    border-style: solid;
+    border-color: #000;
+	border-width: 1px;	
+	width: 120px;
+	height: 120px; 
+	background: rgba(136, 183, 246, 0.57);
+	margin-top: 80px;
+   padding:10px;
 }
