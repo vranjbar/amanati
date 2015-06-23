@@ -9,5 +9,10 @@ layout "main_layout"
   end
 
   def contact
+
+  end
+
+  def sendmail
+  	render :action => 'home'
   end
 end
