@@ -145,3 +145,6 @@ ul.catlist li.book{background-image:url(/assets/cat-book.png)}
 
 .p-thumb{text-align: justify}
 
+.img-item{   min-height:200px;   }
+
+.item-one{ font-size: medium;   }
