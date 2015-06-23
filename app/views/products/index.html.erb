@@ -1,2 +1,115 @@
-<h1>Products#index</h1>
-<p>Find me in app/views/products/index.html.erb</p>
+
+<% @page_title = "جستجو" %>
+
+
+<div class="container search-container" style="border: 2px">
+
+
+  <!-- Product type box -->
+  <div class="row">
+    <div class="well well-cat">
+      <ul class="catlist">
+        <li class="car">
+          <div class="overlay">
+            <span class="value">خودرو</span>
+          </div>
+        </li>
+        <li class="melk">
+          <div class="overlay">
+            <span class="value">املاک</span>
+          </div>
+        </li>
+        <li class="homeEquip">
+          <div class="overlay">
+            <span class="value">لوازم خانه</span>
+          </div>
+        </li>
+        <li class="funEquip">
+          <div class="overlay">
+            <span class="value">لوازم تفریحی</span>
+          </div>
+        </li>
+        <li class="electroEquip">
+          <div class="overlay">
+            <span class="value">لوازم الکترونیکی</span>
+          </div>
+        </li>
+        <li class="personalEquip">
+          <div class="overlay">
+            <span class="value">لوازم شخصی</span>
+          </div>
+        </li>
+        <li class="book">
+          <div class="overlay">
+            <span class="value">کتاب</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+  <!-- search form -->
+  <div class="panel panel-default">
+    <div class="panel-heading">
+          <%= label_tag("دنبال چی می گردی؟") %>
+    </div>
+    <div class="panel-body" style="text-align: center">
+        <%= form_tag(method: "post",:action=> 'index') do %>
+          <div class="row">
+              <div class="col-md-2 col-md-push-10" >
+                <%= label_tag("عنوان آگهی") %>
+              </div>
+              <div class="col-md-2 col-md-push-6" >
+                <%= text_field_tag("title","عنوان", class: 'form-control') %>
+
+              </div>
+              <div class="col-md-2 col-md-push-2" style="text-align: left" >
+                 <%= select_tag(:category_id, options_for_select([['انتخاب گروه', '0'],['کتاب', 'کتاب'], ['تفریحی', 'تفریحی'], ['لوازم شخصی', 'لوازم شخصی'], ['لوازم الکترونیکی', 'لوازم الکترونیکی'], ['لوازم خانگی', 'لوازم خانگی'], ['املاک', 'املاک'], ['خودرو', 'خودرو']]), class: 'form-control my_form-control' ) %>
+              </div>
+              <div class="col-md-2 col-md-pull-2" >
+                <%= select_tag(:city_id, options_for_select([['انتخاب شهر', '0'], ['اراک', 'اراک'], ['اردبیل', 'اردبیل'], ['اصفهان', 'اصفهان'], ['اهواز', 'اهواز'], ['ایلام', 'ایلام'], ['بجنورد', 'بجنورد'], ['بندرعباس', 'بندرعباس'], ['بوشهر', 'بوشهر'], ['بیرجند', 'بیرجند'], ['ارومیه', 'ارومیه'], ['ارومیه', 'ارومیه'], ['ارومیه', 'ارومیه'], ['ارومیه', 'ارومیه'], ['تبریز', 'تبریز'], ['تهران', 'تهران'], ['خرم آباد', 'خرم آباد'], ['رشت', 'رشت'], ['زاهدان', 'زاهدان'], ['زنجان', 'زنجان'], ['ساری', 'ساری'], ['سمنان', 'سمنان'], ['سنندج', 'سنندج'], ['شهرکرد', 'شهرکرد'], ['شیراز', 'شیراز'], ['قزوین', 'قزوین'], ['قم', 'قم'], ['کرج', 'کرج'], ['کرمان', 'کرمان'], ['کرمانشاه', 'کرمانشاه'], ['گرگان', 'گرگان'], ['مشهد', 'مشهد'], ['همدان', 'همدان'], ['یاسوج', 'یاسوج'], ['یزد', 'یزد']]), class: 'form-control my_form-control' ) %>
+              </div>
+              <div class="col-md-2 col-md-pull-6" >
+                <%= submit_tag("جستجو", class: 'btn btn-success') %>
+              </div>
+              <div class="col-md-2 col-md-pull-10" ></div>
+          </div>
+          </br>
+          <div class="row">
+              <div class="col-md-2 col-md-push-10" >
+                <%= label_tag("محدوده قیمت به ریال") %>
+              </div>
+              <div class="col-md-2 col-md-push-6" >
+                <%= text_field_tag('prsiceStrart',nil, placeholder: 'از قیمت', class: 'form-control') %>
+              </div>
+              <div class="col-md-2 col-md-push-2" style="text-align: left" >
+                <%= text_field_tag('prsiceStrart',nil, placeholder: 'تا قیمت', class: 'form-control') %>
+              </div>
+              <div class="col-md-2 col-md-pull-2" >
+                <%= label_tag("محدوده تاریخ آگهی") %>
+              </div>
+              <div class="col-md-2 col-md-pull-6" >
+                <%= select_tag(:dateStrart, options_for_select([['از تاریخ', '0'],['1394', '1394'], ['1393', '1393'], ['1392', '1392'], ['1391', '1391'], ['1390', '1390']]), class: 'form-control my_form-control' ) %>
+              </div>
+              <div class="col-md-2 col-md-pull-10" >
+                <%= select_tag(:dateEnd, options_for_select([['تا تاریخ', '0'],['1394', '1394'], ['1393', '1393'], ['1392', '1392'], ['1391', '1391'], ['1390', '1390']]), class: 'form-control my_form-control' ) %>
+              </div>        
+          </div>
+          <br/>
+          <div class="row row-sort" style="width: auto">
+            <div class="col-md-10" ><%= select_tag(:sort_type, options_for_select([['جدیدترین آگهی به قدیمی ترین آگهی', '0'],['قدیمی ترین آگهی به جدیدترین آگهی', '1'], ['ارزانترین آگهی به گرانترین آگهی', '2'], ['گرانترین آگهی به ارزانترین آگهی', '3']]), class: 'form-control' ) %></div>
+            <div class="col-md-2" ><%= label_tag("مرتب سازی براساس") %></div>
+          </div>
+        <% end %>
+    </div>
+  </div>  </div>
+
+    <!-- Sort -->
+
+
+    <!-- Items -->
+    <div class="row" style="width: auto">
+
+    </div>
+</div>

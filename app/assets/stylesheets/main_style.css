@@ -1,0 +1,142 @@
+
+
+body {    background-color: rgba(224, 228, 255, 0.57);	font-family: 'nassim';	 direction: rtl;	}
+
+.btn-login:hover{	background-color:rgb(131, 131, 131) !important;	}
+
+button.btn-login{  background-color: silver;	width: 100px;	}
+
+@font-face {	font-family: 'nassim';	font-weight: normal;	font-style: normal;
+  src:url('/assets/nassim-regular.eot');  src:url('/assets/nassim-regular.eot') format('eot'),
+  url('/assets/nassim-regular.woff') format('woff'),    url('/assets/nassim-regular.ttf') format('truetype');
+}
+
+.navbar-default .navbar-nav > li > a {  font-size: 12pt; margin-bottom: -10px	}
+
+.header-nav-ul {
+    float: right;
+    padding-right: 150px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    overflow: hidden;
+}
+
+.main-container {
+    padding-top: 100px;
+    padding-bottom: 20px;
+    height: 100%;
+    width: 80%;
+    background-color: #f3f3f3;
+    margin-top: -20px;
+    -moz-box-shadow: 0 0 10px 10px #888;
+    -webkit-box-shadow: 0 0 10px 10px #888;
+    box-shadow: 0 0 10px 10px #888;
+}
+
+.row-footer {
+    background-color: #f3f3f3;
+    margin-top: -30px;
+    height: 70px;
+    font-size: 13pt;
+    padding-top: 40px;
+}
+
+.nav-footer {
+    padding: 3px;
+    color: grey;
+    font-weight: bold;
+}
+
+.home-container {
+    margin: 20px 0px 0px 10px;
+    width: auto;
+}
+
+.search-container {
+    margin: 20px 0px 0px 10px;
+    width: auto;
+}
+
+.circle {
+    border-radius: 50%;
+    border-style: solid;
+    border-color: #000;
+    border-width: 1px;
+    width: 110px;
+    height: 110px;
+    text-align: center;
+}
+
+li.cat-circle {
+    margin: 0px 10px 0px 10px;
+}
+
+.cat-circle:hover {
+    background-color: rgb(131, 131, 131) !important;
+}
+
+.circle1 {
+    width: 110px;
+    height: 110px;
+    background: rgba(134, 241, 90, 0.76);
+    margin-top: -30px;
+}
+
+.circle2 {
+    width: 125px;
+    height: 120px;
+    background: rgba(255, 252, 0, 0.61);
+    padding: 10px;
+}
+
+.circle3 {
+    width: 120px;
+    height: 120px;
+    background: rgba(255, 156, 0, 0.59);
+    margin-top: 50px;
+    padding: 10px;
+}
+
+.circle4 {
+    width: 120px;
+    height: 120px;
+    background: rgba(136, 183, 246, 0.57);
+    margin-top: 80px;
+    padding: 10px;
+}
+
+.my_form-control {
+    width: 130px;
+}
+
+.row-rtl {
+    .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+        float: right;
+    }
+    .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
+        float: right;
+    }
+}
+
+
+.btn-success {
+	width:120px;
+    font-weight: bold;
+}
+
+.well-cat { padding: 20px 0px 20px 0px; overflow:hidden;}
+
+li{list-style:none} 
+ul.catlist li{ background-size: 110px 110px; float:right; border:solid 2px #000;width:110px;cursor:pointer;height:110px;background-repeat:no-repeat;background-position:center center;position:relative;margin:5px; opacity:.8;-webkit-border-radius:50%;border-radius:50%}
+ul.catlist li .overlay{font-size:18px; text-align:center;padding-top:40px;background-color:rgba(0,139,212,0.6);position:absolute;left:0;right:0;bottom:0;top:0;-webkit-border-radius:55px;border-radius:55px;color:#fff;opacity:0;-webkit-transition:all .3s ease;-moz-transition:all .3s ease;-ms-transition:all .3s ease;-o-transition:all .3s ease;transition:all .3s ease}
+ul.catlist li:hover{opacity:.8}
+ul.catlist li:hover .overlay{opacity:1}
+ul.catlist li.car{background-image:url(/assets/cat-car.png)}
+ul.catlist li.melk{background-image:url(/assets/cat-melk.png)}
+ul.catlist li.homeEquip{background-image:url(/assets/cat-home.png)}
+ul.catlist li.funEquip{background-image:url(/assets/cat-fun.png)}
+ul.catlist li.electroEquip{background-image:url(/assets/cat-camera.png)}
+ul.catlist li.personalEquip{background-image:url(/assets/cat-pers.png)}
+ul.catlist li.book{background-image:url(/assets/cat-book.png)}
+
