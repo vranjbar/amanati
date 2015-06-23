@@ -1,2 +1,33 @@
-<h1>MainPages#contact</h1>
-<p>Find me in app/views/main_pages/contact.html.erb</p>
+<% @page_title = "Contact us" %>
+
+
+<div class="row", style=" margin-top:100px; width: auto">
+  <div class="row", style=" margin-top:10px; direction: rtl; padding-right: 50px ">
+    <h3 xmlns="http://www.w3.org/1999/html">
+      تماس با ما 
+    </h3>
+    کاربر گرامی در صورت وجود هر گونه انتقاد یا شکایت ویا سوال و ابهامی از طریق فرم زیر به ما اطلاع دهید.
+  </br></br>
+  </div>
+  <div class="col-md-6 col-md-offset-3" style="direction: rtl">
+    <div class="col-md-6 col-md-offset-4" style="direction: rtl">
+      <%= form_tag("/main_pages/sendmail", :method=>"POST") do %>
+          <%= text_field "Contact", "name", "size" => 50 %></br>
+          <%= text_field "Contact", "email", "size" => 50 %></br>
+          <%= text_area "Contact", "comment", "cols" => 48, "rows" => 4%></br>
+          <%= submit_tag "ارسال" %>
+          
+      <% end %>
+    </div>
+    <div class="col-md-2 " style="direction: rtl">
+      <%= 'نام:  '%></br>
+      <%= 'ایمیل:  '%></br>
+      <%= 'پیام:  '%></br>
+    </div>
+
+
+
+
+
+  </div>
+</div>
