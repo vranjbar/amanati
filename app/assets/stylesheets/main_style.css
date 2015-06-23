@@ -126,6 +126,7 @@ li.cat-circle {
 }
 
 .well-cat { padding: 20px 0px 20px 0px; overflow:hidden;}
+.well-item { overflow:hidden;}
 
 li{list-style:none} 
 ul.catlist li{ background-size: 110px 110px; float:right; border:solid 2px #000;width:110px;cursor:pointer;height:110px;background-repeat:no-repeat;background-position:center center;position:relative;margin:5px; opacity:.8;-webkit-border-radius:50%;border-radius:50%}
@@ -139,4 +140,8 @@ ul.catlist li.funEquip{background-image:url(/assets/cat-fun.png)}
 ul.catlist li.electroEquip{background-image:url(/assets/cat-camera.png)}
 ul.catlist li.personalEquip{background-image:url(/assets/cat-pers.png)}
 ul.catlist li.book{background-image:url(/assets/cat-book.png)}
+
+.img-thumb-item{ width: 150px; height: 150px; }
+
+.p-thumb{text-align: justify}
 
