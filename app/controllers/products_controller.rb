@@ -13,7 +13,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-    
+    redirect_to(:controller => 'products', :action => 'new')
   end
 
   def edit
