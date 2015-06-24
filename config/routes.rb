@@ -15,6 +15,9 @@ Amanati::Application.routes.draw do
   delete 'logout'  => 'sessions#destroy'
   root 'main_pages#home'
   resources :users
+  resource :products
+
+
 
   match ':controller(/:action(/:id(.:format)))', :via => :get
   match ':controller(/:action(/:id(.:format)))', :via => :post

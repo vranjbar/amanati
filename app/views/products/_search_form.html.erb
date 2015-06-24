@@ -4,7 +4,7 @@
           <%= label_tag("دنبال چی می گردی؟") %>
     </div>
     <div class="panel-body" style="text-align: center">
-        <%= form_tag(method: "post",:action=> 'index') do %>
+        <%= form_tag(method: "post",:action=> 'search') do %>
           <div class="row">
               <div class="col-md-2 col-md-push-10" >
                 <%= label_tag("عنوان آگهی") %>
@@ -17,7 +17,7 @@
                  <%= select_tag(:category_id, options_for_select([['انتخاب گروه', '0'],['کتاب', 'کتاب'], ['تفریحی', 'تفریحی'], ['لوازم شخصی', 'لوازم شخصی'], ['لوازم الکترونیکی', 'لوازم الکترونیکی'], ['لوازم خانگی', 'لوازم خانگی'], ['املاک', 'املاک'], ['خودرو', 'خودرو']]), class: 'form-control my_form-control' ) %>
               </div>
               <div class="col-md-2 col-md-pull-2" >
-                <%= select_tag(:city_id, options_for_select([['انتخاب شهر', '0'], ['اراک', 'اراک'], ['اردبیل', 'اردبیل'], ['اصفهان', 'اصفهان'], ['اهواز', 'اهواز'], ['ایلام', 'ایلام'], ['بجنورد', 'بجنورد'], ['بندرعباس', 'بندرعباس'], ['بوشهر', 'بوشهر'], ['بیرجند', 'بیرجند'], ['ارومیه', 'ارومیه'], ['ارومیه', 'ارومیه'], ['ارومیه', 'ارومیه'], ['ارومیه', 'ارومیه'], ['تبریز', 'تبریز'], ['تهران', 'تهران'], ['خرم آباد', 'خرم آباد'], ['رشت', 'رشت'], ['زاهدان', 'زاهدان'], ['زنجان', 'زنجان'], ['ساری', 'ساری'], ['سمنان', 'سمنان'], ['سنندج', 'سنندج'], ['شهرکرد', 'شهرکرد'], ['شیراز', 'شیراز'], ['قزوین', 'قزوین'], ['قم', 'قم'], ['کرج', 'کرج'], ['کرمان', 'کرمان'], ['کرمانشاه', 'کرمانشاه'], ['گرگان', 'گرگان'], ['مشهد', 'مشهد'], ['همدان', 'همدان'], ['یاسوج', 'یاسوج'], ['یزد', 'یزد']]), class: 'form-control my_form-control' ) %>
+                <%= select_tag(:city_id, options_for_select($myCity), class: 'form-control my_form-control' ) %>
               </div>
               <div class="col-md-2 col-md-pull-6" >
                 <%= submit_tag("جستجو", class: 'btn btn-success') %>
@@ -39,10 +39,10 @@
                 <%= label_tag("محدوده تاریخ آگهی") %>
               </div>
               <div class="col-md-2 col-md-pull-6" >
-                <%= select_tag(:dateStrart, options_for_select([['از تاریخ', '0'],['1394', '1394'], ['1393', '1393'], ['1392', '1392'], ['1391', '1391'], ['1390', '1390']]), class: 'form-control my_form-control' ) %>
+                <%= text_field_tag('dateStart',nil, type: "date", max: "2015-6-27",  class: 'form-control') %>
               </div>
               <div class="col-md-2 col-md-pull-10" >
-                <%= select_tag(:dateEnd, options_for_select([['تا تاریخ', '0'],['1394', '1394'], ['1393', '1393'], ['1392', '1392'], ['1391', '1391'], ['1390', '1390']]), class: 'form-control my_form-control' ) %>
+                <%= text_field_tag('dateEnd',nil, type: "date", max: "2015-6-27",  class: 'form-control') %> 
               </div>        
           </div>
           <br/>
@@ -53,3 +53,5 @@
         <% end %>
     </div>
   </div> 
+
+

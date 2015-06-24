@@ -2,11 +2,14 @@
 
 body {    background-color: rgba(224, 228, 255, 0.57);	font-family: 'nassim';	 direction: rtl;	}
 
+a:link {    text-decoration: none;}
+
 .btn-login:hover{	background-color:rgb(131, 131, 131) !important;	}
 
 button.btn-login{  background-color: silver;	width: 100px;	}
 .btn-signin{ width: 100%; }
 
+button.btn-new{ width:100%;}
 
 @font-face {	font-family: 'nassim';	font-weight: normal;	font-style: normal;
   src:url('/assets/nassim-regular.eot');  src:url('/assets/nassim-regular.eot') format('eot'),
@@ -15,14 +18,7 @@ button.btn-login{  background-color: silver;	width: 100px;	}
 
 .navbar-default .navbar-nav > li > a {  font-size: 12pt; margin-bottom: -10px	}
 
-.header-nav-ul {
-    float: right;
-    padding-right: 150px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-    overflow: hidden;
-}
+.header-nav-ul { float: right;  padding-right: 150px;   padding-left: 15px; margin-right: auto;    margin-left: auto;    overflow: hidden;}
 
 .main-container {
     padding-top: 100px;
@@ -108,9 +104,10 @@ li.cat-circle {
     padding: 10px;
 }
 
-.my_form-control {
-    width: 130px;
-}
+.my_form-control {    width: 130px; margin-bottom:5px; }
+textarea.my_form-control {    width: 250px; margin-bottom:5px; }
+
+.product_form-control {    width: 130px;    }
 
 .row-rtl {
     .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
@@ -124,13 +121,10 @@ li.cat-circle {
 }
 
 
-.btn-success {
-	width:120px;
-    font-weight: bold;
-}
+.btn-success {	width:120px;    font-weight: bold;  }
 
 .well-cat { padding: 20px 0px 20px 0px; overflow:hidden;}
-.well-item { overflow:hidden;}
+.well-item { overflow:hidden; }
 
 li{list-style:none} 
 ul.catlist li{ background-size: 110px 110px; float:right; border:solid 2px #000;width:110px;cursor:pointer;height:110px;background-repeat:no-repeat;background-position:center center;position:relative;margin:5px; opacity:.8;-webkit-border-radius:50%;border-radius:50%}
@@ -152,5 +146,9 @@ ul.catlist li.book{background-image:url(/assets/cat-book.png)}
 .img-item{   min-height:200px;   }
 
 .item-one{ font-size: medium;   }
+
+.product-new-class{ font-size: medium; line-height: 25pt }
+
 #error_explanation {color: red; ul { color: red; margin: 0 0 30px 0;}}
 .field_with_errors { @extend .has-error; .form-control { color: red; }}
+
