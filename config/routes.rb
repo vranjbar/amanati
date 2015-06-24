@@ -10,6 +10,8 @@ Amanati::Application.routes.draw do
   # get "users/edit"
   # get "users/delete"
   root 'main_pages#home'
+  resource :users
+  resource :products
 
   match ':controller(/:action(/:id(.:format)))', :via => :get
   match ':controller(/:action(/:id(.:format)))', :via => :post
