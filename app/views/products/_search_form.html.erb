@@ -17,7 +17,7 @@
                  <%= select_tag(:category_id, options_for_select([['انتخاب گروه', '0'],['کتاب', 'کتاب'], ['تفریحی', 'تفریحی'], ['لوازم شخصی', 'لوازم شخصی'], ['لوازم الکترونیکی', 'لوازم الکترونیکی'], ['لوازم خانگی', 'لوازم خانگی'], ['املاک', 'املاک'], ['خودرو', 'خودرو']]), class: 'form-control my_form-control' ) %>
               </div>
               <div class="col-md-2 col-md-pull-2" >
-                <%= select_tag(:city_id, options_for_select($myCity), class: 'form-control my_form-control' ) %>
+                <%= select_tag(:city_id, options_for_select(['اراک', 'اردبیل', 'اصفهان', 'اهواز', 'ایلام', 'بجنورد', 'بندرعباس', 'بوشهر', 'بیرجند', 'ارومیه', 'تبریز', 'تهران', 'خرم آباد', 'رشت', 'زاهدان', 'زنجان', 'ساری', 'سمنان', 'سنندج', 'شهرکرد', 'شیراز', 'قزوین', 'قم', 'کرج', 'کرمان', 'کرمانشاه', 'گرگان', 'مشهد', 'همدان', 'یاسوج', 'یزد']), class: 'form-control my_form-control' ) %>
               </div>
               <div class="col-md-2 col-md-pull-6" >
                 <%= submit_tag("جستجو", class: 'btn btn-success') %>
@@ -30,10 +30,10 @@
                 <%= label_tag("محدوده قیمت به ریال") %>
               </div>
               <div class="col-md-2 col-md-push-6" >
-                <%= text_field_tag('prsiceStrart',nil, placeholder: 'از قیمت', class: 'form-control') %>
+                <%= text_field_tag('priceStart',nil, placeholder: 'از قیمت', class: 'form-control') %>
               </div>
               <div class="col-md-2 col-md-push-2" style="text-align: left" >
-                <%= text_field_tag('prsiceStrart',nil, placeholder: 'تا قیمت', class: 'form-control') %>
+                <%= text_field_tag('priceEnd',nil, placeholder: 'تا قیمت', class: 'form-control') %>
               </div>
               <div class="col-md-2 col-md-pull-2" >
                 <%= label_tag("محدوده تاریخ آگهی") %>
