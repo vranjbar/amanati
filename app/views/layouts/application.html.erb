@@ -4,9 +4,7 @@
   <title>Amanati</title>
 </head>
 <body>
-<% flash.each do |message_type, message| %>
-        <div class="alert alert-<%= message_type %>"><%= message %></div>
-      <% end %>
+
 <%= yield %>
 
 </body>

@@ -5,6 +5,8 @@ body {    background-color: rgba(224, 228, 255, 0.57);	font-family: 'nassim';	 d
 .btn-login:hover{	background-color:rgb(131, 131, 131) !important;	}
 
 button.btn-login{  background-color: silver;	width: 100px;	}
+.btn-signin{ width: 100%; }
+
 
 @font-face {	font-family: 'nassim';	font-weight: normal;	font-style: normal;
   src:url('/assets/nassim-regular.eot');  src:url('/assets/nassim-regular.eot') format('eot'),
@@ -114,6 +116,8 @@ li.cat-circle {
     .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
         float: right;
     }
+}
+.row-rtl {
     .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
         float: right;
     }
@@ -149,4 +153,4 @@ ul.catlist li.book{background-image:url(/assets/cat-book.png)}
 
 .item-one{ font-size: medium;   }
 #error_explanation {color: red; ul { color: red; margin: 0 0 30px 0;}}
-.field_with_errors { @extend .has-error; .form-control { color: $state-danger-text; }}
+.field_with_errors { @extend .has-error; .form-control { color: red; }}
