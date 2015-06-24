@@ -145,6 +145,8 @@ ul.catlist li.book{background-image:url(/assets/cat-book.png)}
 
 .p-thumb{text-align: justify}
 
+.img-item{   min-height:200px;   }
 
+.item-one{ font-size: medium;   }
 #error_explanation {color: red; ul { color: red; margin: 0 0 30px 0;}}
 .field_with_errors { @extend .has-error; .form-control { color: $state-danger-text; }}

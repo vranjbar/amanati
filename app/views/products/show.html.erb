@@ -1,2 +1,78 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+<div class="container search-container" style="border: 2px">
+
+  <!-- Product category -->
+  <%= render(:partial => "product_category") %>
+
+  <!-- Search form -->
+  <%= render(:partial => "search_form") %>
+
+  <% @pro.name = "samand" %>
+  <% @pro.city = "Tehran" %>
+  <% @pro.image = "cat-car.png" %>
+  <% @pro.price = "1000000" %>
+  <% @pro.description = "سمند مدل 1390 آماده اجاره دادن" %>
+
+  <div class="well well-item">
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <%= image_tag(@pro.image, class: 'img-item', :alt=> '') %>
+      </div>
+
+    </div>
+    <div class="col-md-8 item-one">
+        <h1><%= @pro.name %></h1>
+        <p><span>شهر:  <%= @pro.city %></span></p>
+        <p><span>قیمت روزانه: <%= @pro.price %></span></p>
+        <p><span>توضیحات: <%= @pro.description %></span></p>
+        <p><span>مشخصات امانتی دهنده: <%= @pro.description %></span></p>
+    </div>
+
+  </div>
+
+
+<!-- Items -->
+<h3>امانتی های مرتبط</h3>
+    <div class="row" style="width: auto">
+        <div class="well well-item">
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+              <%= image_tag("cat-car.png", class: 'img-thumb-item', :alt=> 'سمند') %>
+              <div class="caption"  style="text-align: center">
+                <h3>سمند</h3>
+                <p class="p-thumb">خودرو سواری سمند مدل 1390 به مدت 10 روز امانت داده می شود</p>
+                <button type="button" class="btn btn-success">
+                  <%= link_to("اطلاعات کامل", {:controller=>'products', :action=>'show', :id=>'1'}) %>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+              <%= image_tag("cat-car.png", class: 'img-thumb-item', :alt=> 'سمند') %>
+              <div class="caption"  style="text-align: center">
+                <h3>سمند</h3>
+                <p class="p-thumb">خودرو سواری سمند مدل 1390 به مدت 10 روز امانت داده می شود</p>
+                <button type="button" class="btn btn-success">
+                  <%= link_to("اطلاعات کامل", {:controller=>'products', :action=>'show', :id=>'1'}) %>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+              <%= image_tag("cat-car.png", class: 'img-thumb-item', :alt=> 'سمند') %>
+              <div class="caption"  style="text-align: center">
+                <h3>سمند</h3>
+                <p class="p-thumb">خودرو سواری سمند مدل 1390 به مدت 10 روز امانت داده می شود</p>
+                <button type="button" class="btn btn-success">
+                  <%= link_to("اطلاعات کامل", {:controller=>'products', :action=>'show', :id=>'1'}) %>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+</div>
+
