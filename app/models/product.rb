@@ -15,7 +15,7 @@ class Product < ActiveRecord::Base
    scope :search_name, lambda { |query| where(["products.name LIKE ?",  "%#{query}%"] )}
    scope :under_price, lambda { |query| where(["products.price <= ?", "#{query}"])}
    scope :over_price, lambda { |query| where(["products.price >= ?", "#{query}"])}
-   scope :search_category, lambda { |query| where(["products.category_id = ?",  "%#{query}%"])}
+   scope :search_category, lambda { |query| where(["products.category_id = ?",  "#{query}"])}
    scope :newest_first, lambda {order("products.created_at DESC")}
    scope :oldest_first, lambda {order("products.created_at ASC")}
    scope :lowest_price_first, lambda {order("products.price ASC")}

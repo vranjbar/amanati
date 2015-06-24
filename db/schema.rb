@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150623151858) do
+ActiveRecord::Schema.define(version: 20150624130806) do
 
   create_table "categories", force: true do |t|
     t.string   "name",       limit: 100, default: "", null: false

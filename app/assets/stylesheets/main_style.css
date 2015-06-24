@@ -13,14 +13,7 @@ button.btn-login{  background-color: silver;	width: 100px;	}
 
 .navbar-default .navbar-nav > li > a {  font-size: 12pt; margin-bottom: -10px	}
 
-.header-nav-ul {
-    float: right;
-    padding-right: 150px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-    overflow: hidden;
-}
+.header-nav-ul { float: right;  padding-right: 150px;   padding-left: 15px; margin-right: auto;    margin-left: auto;    overflow: hidden;}
 
 .main-container {
     padding-top: 100px;
@@ -106,9 +99,10 @@ li.cat-circle {
     padding: 10px;
 }
 
-.my_form-control {
-    width: 130px;
-}
+.my_form-control {    width: 130px; margin-bottom:5px; }
+textarea.my_form-control {    width: 250px; margin-bottom:5px; }
+
+.product_form-control {    width: 130px;    }
 
 .row-rtl {
     .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
@@ -120,10 +114,7 @@ li.cat-circle {
 }
 
 
-.btn-success {
-	width:120px;
-    font-weight: bold;
-}
+.btn-success {	width:120px;    font-weight: bold;  }
 
 .well-cat { padding: 20px 0px 20px 0px; overflow:hidden;}
 .well-item { overflow:hidden;}
@@ -148,5 +139,9 @@ ul.catlist li.book{background-image:url(/assets/cat-book.png)}
 .img-item{   min-height:200px;   }
 
 .item-one{ font-size: medium;   }
+
+.product-new-class{ font-size: medium; line-height: 25pt }
+
 #error_explanation {color: red; ul { color: red; margin: 0 0 30px 0;}}
-.field_with_errors { @extend .has-error; .form-control { color: $state-danger-text; }}
+.field_with_errors { @extend .has-error; .form-control { color: red; }}
+
