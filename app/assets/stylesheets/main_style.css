@@ -2,9 +2,13 @@
 
 body {    background-color: rgba(224, 228, 255, 0.57);	font-family: 'nassim';	 direction: rtl;	}
 
+a:link {    text-decoration: none;}
+
 .btn-login:hover{	background-color:rgb(131, 131, 131) !important;	}
 
 button.btn-login{  background-color: silver;	width: 100px;	}
+
+button.btn-new{ width:100%;}
 
 @font-face {	font-family: 'nassim';	font-weight: normal;	font-style: normal;
   src:url('/assets/nassim-regular.eot');  src:url('/assets/nassim-regular.eot') format('eot'),
@@ -117,7 +121,7 @@ textarea.my_form-control {    width: 250px; margin-bottom:5px; }
 .btn-success {	width:120px;    font-weight: bold;  }
 
 .well-cat { padding: 20px 0px 20px 0px; overflow:hidden;}
-.well-item { overflow:hidden;}
+.well-item { overflow:hidden; }
 
 li{list-style:none} 
 ul.catlist li{ background-size: 110px 110px; float:right; border:solid 2px #000;width:110px;cursor:pointer;height:110px;background-repeat:no-repeat;background-position:center center;position:relative;margin:5px; opacity:.8;-webkit-border-radius:50%;border-radius:50%}

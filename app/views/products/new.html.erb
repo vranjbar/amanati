@@ -1,9 +1,11 @@
 <div class="well-cat">
   <div class="row">
+
     <%= form_for(@product, :url => {:action=> "create"}, :html => {:multipart => true} ) do |f| %>
 		<div class="col-md-2 col-md-push-7">
 			<%= f.label :name, "عنوان", class: "product-new-class" %> <br/>
 			<%= f.label :user_id, "کد کاربری", class: "product-new-class"  %> <br/>
+			<%= f.label :category_id, "انتخاب گروه", class: "product-new-class"  %> <br/>
 			<%= f.label :price, "قیمت", class: "product-new-class"  %> <br/>
 			<%= f.label :city, "شهر", class: "product-new-class"  %> <br/>
 			<%= f.label :phone_number, "شماره تماس", class: "product-new-class"  %> <br/>
@@ -16,10 +18,11 @@
         <div class="col-md-8 col-md-pull-3">
 	        <%= f.text_field :name, class: "form-control my_form-control" %>        
 	        <%= f.text_field :user_id, class: "form-control my_form-control"  %>
-	        <%= f.text_field :price, type: "number", class: "form-control my_form-control"  %>
-	        <%= f.text_field :city, class: "form-control my_form-control"  %>
-	        <%= f.text_field :phone_number, pattern: ".{0}|.{11}", class: "form-control my_form-control"  %>
-			<%= f.text_field :email, type: "email", class: "form-control my_form-control"  %>
+            <%= f.select(:category_id, options_for_select($myCity, "id"), class: 'form-control my_form-control') %>	        
+	        <%= f.text_field :price, type: "number", class: "form-control my_form-control", min:"0"  %>
+            <%= f.select(:city, options_for_select($myCity, "id"), class: 'form-control my_form-control') %>
+	        <%= f.text_field :phone_number, pattern: ".{0}|.{11}", class: "form-control my_form-control", placeholder: "09123456789"  %>
+			<%= f.text_field :email, type: "email", class: "form-control my_form-control", placeholder: "email@temp.com"  %>
 			<%= f.file_field :image, accept: 'image/png,image/gif,image/jpeg, image/jpg, image/tif' %>
 	        <%= f.text_area :address, class: "form-control my_form-control", size: "60x3" %>
 			<%= f.text_area :description, class: "form-control my_form-control", size: "60x3" %>
