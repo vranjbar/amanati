@@ -1,3 +1,4 @@
+<% @page_title = @product.name %>
 <div class="container search-container" style="border: 2px">
 
   <!-- Product category -->
@@ -6,25 +7,25 @@
   <!-- Search form -->
   <%= render(:partial => "search_form") %>
 
-  <% @pro.name = "samand" %>
-  <% @pro.city = "Tehran" %>
-  <% @pro.image = "cat-car.png" %>
-  <% @pro.price = "1000000" %>
-  <% @pro.description = "سمند مدل 1390 آماده اجاره دادن" %>
+  <% @product.name = "samand" %>
+  <% @product.city = "Tehran" %>
+  <% @product.image = "cat-car.png" %>
+  <% @product.price = "1000000" %>
+  <% @product.description = "سمند مدل 1390 آماده اجاره دادن" %>
 
   <div class="well well-item">
     <div class="col-md-4">
       <div class="thumbnail">
-        <%= image_tag(@pro.image, class: 'img-item', :alt=> '') %>
+        <%= image_tag(@product.image, class: 'img-item', :alt=> '') %>
       </div>
 
     </div>
     <div class="col-md-8 item-one">
-        <h1><%= @pro.name %></h1>
-        <p><span>شهر:  <%= @pro.city %></span></p>
-        <p><span>قیمت روزانه: <%= @pro.price %></span></p>
-        <p><span>توضیحات: <%= @pro.description %></span></p>
-        <p><span>مشخصات امانتی دهنده: <%= @pro.description %></span></p>
+        <h1><%= @product.name %></h1>
+        <p><span>شهر:  <%= @product.city %></span></p>
+        <p><span>قیمت روزانه: <%= @product.price %></span></p>
+        <p><span>توضیحات: <%= @product.description %></span></p>
+        <p><span>مشخصات امانتی دهنده: <%= @product.description %></span></p>
     </div>
 
   </div>

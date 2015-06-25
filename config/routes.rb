@@ -1,6 +1,5 @@
 Amanati::Application.routes.draw do
 
-  # get "sessions/new"
   # get "products/index"
   # get "products/show"
   # get "products/new"
@@ -8,11 +7,8 @@ Amanati::Application.routes.draw do
   # get "products/delete"
   # get "users/show"
   # get "users/new"
-  # get "users/edit"
-  # get "users/delete"
-  get    'login'   => 'sessions#new'
-  post   'login'   => 'sessions#create'
-  delete 'logout'  => 'sessions#destroy'
+   get "users/edit"
+   get "users/delete"
   root 'main_pages#home'
   resources :users
   resource :products
@@ -21,7 +17,6 @@ Amanati::Application.routes.draw do
 
   match ':controller(/:action(/:id(.:format)))', :via => :get
   match ':controller(/:action(/:id(.:format)))', :via => :post
-  match ':controller(/:action(/:id(.:format)))', :via => :delete
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -7,7 +7,6 @@ a:link {    text-decoration: none;}
 .btn-login:hover{	background-color:rgb(131, 131, 131) !important;	}
 
 button.btn-login{  background-color: silver;	width: 100px;	}
-.btn-signin{ width: 100%; }
 
 button.btn-new{ width:100%;}
 
@@ -23,13 +22,14 @@ button.btn-new{ width:100%;}
 .main-container {
     padding-top: 100px;
     padding-bottom: 20px;
-    height: 100%;
+    min-height: 620px;
     width: 80%;
     background-color: #f3f3f3;
     margin-top: -20px;
     -moz-box-shadow: 0 0 10px 10px #888;
     -webkit-box-shadow: 0 0 10px 10px #888;
     box-shadow: 0 0 10px 10px #888;
+
 }
 
 .row-footer {
@@ -113,8 +113,6 @@ textarea.my_form-control {    width: 250px; margin-bottom:5px; }
     .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
         float: right;
     }
-}
-.row-rtl {
     .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
         float: right;
     }
