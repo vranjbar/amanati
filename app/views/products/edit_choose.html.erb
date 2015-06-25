@@ -1,0 +1,30 @@
+<% @page_title = "ویرایش امانتی" %>
+
+<div class="well-cat" style="overflow: hidden">
+
+  <div class="panel panel-default" style="margin: 0 50px;">
+
+    <div class="panel-heading"><h4>انتخاب یک آگهی امانتی برای ویرایش یا حذف</h4></div>
+		<table class="table" >
+          <tr style="font-weight: bold">
+            <td>عنوان</td>
+            <td>گروه</td>
+            <td>قیمت</td>
+            <td>شهر</td>
+            <td>نمایش</td>
+            <td>ویرایش</td>
+            <td>حذف</td>            
+          </tr>
+          <tr>
+            <td>bbsdasd</td>
+            <td>bbdas</td>
+            <td>bbsdasd</td>
+            <td>bbdas</td>
+            <td><%= link_to image_tag("display.png", :width=>'20', :alt=> 'display'), {:action => 'edit', :controller => 'products'} %></td>
+            <td><%= link_to image_tag("edit.png", :width=>'20', :alt=> 'edit'), {:action => 'edit', :controller => 'products'} %></td>
+            <td><%= link_to image_tag("delete.png", :width=>'20', :alt=> 'delete'), {:action => 'delete', :controller => 'products'} %></td>
+          </tr>
+        </table>
+
+  </div>
+</div>

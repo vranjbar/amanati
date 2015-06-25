@@ -18,18 +18,32 @@
 		        	<li style="margin-top:30px;"><h4 style="color:#FFFFFF">فرصتی برای کسب درآمد و دسترسی به وسایل مورد نیاز با کمترین هزینه</h4></li> 
 		        	<li><h1 style="color:silver; margin-top:30px;">امانتی</h1></li> 
 		        	<li><%= link_to image_tag("nav-icon.png", :width=>'64', :height=>'64', :alt=> 'navbar logo'), {:action => 'home', :controller => 'main_pages'} %></li>
-		        </ul> 
-	    	
+		        </ul>
+	    		
+		        <% if logged_in? %>
+		        <div class="btn-group" role="group" style="margin-top:30px; margin-right:150px">
+				  <button type="button" class="btn btn-default dropdown-toggle btn-login">
+                    <%= link_to image_tag("logout.png", :width=>'24', :height=>'24', :alt=> 'navbar logo'), logout_path, method: "delete" %>
+                    <%= link_to("خروج", logout_path, method: "delete") %>
+                  </button>
+                  <button type="button" class="btn btn-default dropdown-toggle btn-login">
+                    <%= link_to("پروفایل", {:controller=>'users', :action=>'show',:id => session[:user_id]}) %>
+                    <%= link_to image_tag("profile.png", :width=>'24', :height=>'24', :alt=> 'navbar logo'), {:action => 'new', :controller => 'sessions',:id => session[:user_id]} %>
+                  </button>
+				</div>
+        		<% else %> 
 				<div class="btn-group" role="group" style="margin-top:30px; margin-right:150px">
 				  <button type="button" class="btn btn-default dropdown-toggle btn-login">
                     <%= link_to image_tag("signup-icon.png", :width=>'24', :height=>'24', :alt=> 'navbar logo'), {:action => 'new', :controller => 'users'} %>
                     <%= link_to("ثبت نام", {:controller=>'users', :action=>'new'}) %>
                   </button>
                   <button type="button" class="btn btn-default dropdown-toggle btn-login">
-                    <%= link_to("ورود", {:controller=>'main_pages', :action=>'home'}) %>
-                    <%= link_to image_tag("login-icon.png", :width=>'24', :height=>'24', :alt=> 'navbar logo'), {:action => 'home', :controller => 'main_pages'} %>
+                    <%= link_to("ورود", {:controller=>'sessions', :action=>'new'}) %>
+                    <%= link_to image_tag("login-icon.png", :width=>'24', :height=>'24', :alt=> 'navbar logo'), {:action => 'new', :controller => 'sessions'} %>
                   </button>
 				</div>
+				<% end %>
+				 
 			</nav>
 
 		</header>
@@ -38,6 +52,9 @@
 
 		<!-- row 2: Body !-->
 		<div class="container main-container">
+			      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
 			<%= yield %>		
 		</div>
 		
