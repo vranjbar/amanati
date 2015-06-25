@@ -12,8 +12,8 @@ class UsersController < ApplicationController
   def create
       @user = User.new(user_params)   
       if @user.save
-        flash[:success] = "به امانتی خوش آمدید!"
-        redirect_to @user
+        flash[:success] = "از اینکه امانتی را انتخاب کردید سپاسگزاریم، برای استفاده از امکانات بیشتر لطفا وارد شوید!"
+        render 'sessions/new'
       else
         render 'new'
       end
