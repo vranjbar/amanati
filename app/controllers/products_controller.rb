@@ -2,7 +2,8 @@ class ProductsController < ApplicationController
   layout "main_layout"
   $myCity =  ['تهران','اراک', 'اردبیل', 'اصفهان', 'اهواز', 'ایلام', 'بجنورد', 'بندرعباس', 'بوشهر', 'بیرجند', 'ارومیه', 'تبریز', 'خرم آباد', 'رشت', 'زاهدان', 'زنجان', 'ساری', 'سمنان', 'سنندج', 'شهرکرد', 'شیراز', 'قزوین', 'قم', 'کرج', 'کرمان', 'کرمانشاه', 'گرگان', 'مشهد', 'همدان', 'یاسوج', 'یزد']
   $myCategory =  ['کتاب', 'تفریحی', 'لوازم شخصی', 'لوازم الکترونیکی', 'لوازم خانگی', 'املاک', 'خودرو']
-   
+  
+  def search   
   #initializi
     @product = nil
 
@@ -90,18 +91,24 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(params[:id])
+    @show_product = Product.find(params[:id])
+    @other_product = Product.search_category(@show_product.category_id)
   end
 
   def new
-    @product = Product.new
+    if logged_in?
+      @product = Product.new
+    else
+      flash[:error] = "برای ثبت آگهی می بایست وارد حساب کاربری شوید.."
+      render 'sessions/new'
+    end
   end
 
   def create
     @product = Product.new(product_params)   
       if @product.save
         flash[:success] = "آگهی مورد نظر ثبت گردید."
-        render 'show', :locals => {:id => "2"}
+        redirect_to(:action=>'show', :id => @product.id)
       else
         flash[:success] = "خطا"
         render 'new'
