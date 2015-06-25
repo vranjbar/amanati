@@ -1,2 +1,37 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<% @page_title = "ویرایش مشخصات" %>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3 ">
+    <%= form_for(@user) do |f| %>
+
+
+      <%= f.label :name, "نام:" %><span style="color:red;">*</span>
+      <%= f.text_field :name, class: "form-control", :required => true, :placeholder => "placeholder text"  %>
+
+      <%= f.label :user_name, "نام کاربری:" %><span style="color:red;">*</span>
+      <%= f.text_field :user_name, class: "form-control", :required => true %>
+
+      <%= f.label :password, "رمزعبور:" %><span style="color:red;">*</span>
+      <%= f.password_field :hashed_password, class: "form-control", :required => true %>
+
+      <%= f.label :email, "ایمیل:" %><span style="color:red;">*</span>
+      <%= f.email_field :email, class: "form-control" %>
+
+      <%= f.label :phone_number, "شماره تلفن:" %>
+      <%= f.text_field :phone_number, class: "form-control" %>
+
+      <%= f.label :province, "استان:" %>
+      <%= f.text_field :province, class: "form-control" %>
+
+      <%= f.label :city, "شهر:" %>
+      <%= f.text_field :city, class: "form-control" %>
+
+      <%= f.label :address, "آدرس:" %>
+      <%= f.text_area :address, class: "form-control" %>
+
+    </br>
+
+      <%= f.submit "ثبت اطلاعات", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

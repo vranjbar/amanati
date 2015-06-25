@@ -7,8 +7,8 @@ Amanati::Application.routes.draw do
   # get "products/delete"
   # get "users/show"
   # get "users/new"
-  # get "users/edit"
-  # get "users/delete"
+   get "users/edit"
+   get "users/delete"
   root 'main_pages#home'
   resources :users
   resource :products
