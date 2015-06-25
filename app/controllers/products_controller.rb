@@ -98,13 +98,12 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(name: "کتاب رمان" , price: "2121", email:"aaa@yahoo.com")   
+    @product = Product.new(product_params)   
       if @product.save
-        @temp = "salam"
         flash[:success] = "آگهی مورد نظر ثبت گردید."
-        redirect_to @product
+        render 'show', :locals => {:id => "2"}
       else
-        @temp = "bye"
+        flash[:success] = "خطا"
         render 'new'
       end
   end
