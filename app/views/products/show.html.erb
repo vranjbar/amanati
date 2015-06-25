@@ -1,4 +1,5 @@
-<% @page_title = @product.name %>
+<% @page_title = "name" %>
+
 <div class="container search-container" style="border: 2px">
 
   <!-- Product category -->
@@ -12,16 +13,16 @@
   <div class="well well-item">
     <div class="col-md-4">
       <div class="thumbnail">
-        <%= image_tag(@product.image, class: 'img-item', :alt=> '') %>
+        <%= image_tag(@show_product.image, class: 'img-item', :alt=> 'mkjhuygtfdr') %>
       </div>
 
     </div>
     <div class="col-md-8 item-one">
-        <h1><%= @product.name %></h1>
-        <p><span>شهر:  <%= @product.city %></span></p>
-        <p><span>قیمت روزانه: <%= @product.price %></span></p>
-        <p><span>توضیحات: <%= @product.description %></span></p>
-        <p><span>مشخصات امانتی دهنده: <%= @product.description %></span></p>
+        <h1><%= @show_product.name %></h1>
+        <p><span>شهر:  <%= @show_product.city %></span></p>
+        <p><span>قیمت روزانه: <%= @show_product.price %></span></p>
+        <p><span>توضیحات: <%= @show_product.description %></span></p>
+        <p><span>مشخصات امانتی دهنده: <%= @show_product.description %></span></p>
     </div>
 
   </div>
@@ -29,46 +30,28 @@
 
 <!-- Items -->
 <h3>امانتی های مرتبط</h3>
-    <div class="row" style="width: auto">
-        <div class="well well-item">
-          <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-              <%= image_tag("cat-car.png", class: 'img-thumb-item', :alt=> 'سمند') %>
-              <div class="caption"  style="text-align: center">
-                <h3>سمند</h3>
-                <p class="p-thumb">خودرو سواری سمند مدل 1390 به مدت 10 روز امانت داده می شود</p>
-                <button type="button" class="btn btn-success">
-                  <%= link_to("اطلاعات کامل", {:controller=>'products', :action=>'show', :id=>'1'}) %>
-                </button>
+    <% @other_product.in_groups_of(3).each do |group| %>
+      <div class="row">
+
+          <% group.each do |item| %>
+            <% if item %>
+              <div class="col-md-4">
+              <div class="thumbnail">
+                <%= image_tag(item.image, class: 'img-thumb-item', :alt=> item.name) %>
+                <div class="caption"  style="text-align: center">
+                  <h3><%= item.name%></h3>
+                  <p class="p-thumb"><%= item.description %></p>
+                  <button type="button" class="btn btn-success">
+                    <%= link_to("اطلاعات کامل", {:controller=>'products', :action=>'show', :id=>item.id}) %>
+                  </button>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-              <%= image_tag("cat-car.png", class: 'img-thumb-item', :alt=> 'سمند') %>
-              <div class="caption"  style="text-align: center">
-                <h3>سمند</h3>
-                <p class="p-thumb">خودرو سواری سمند مدل 1390 به مدت 10 روز امانت داده می شود</p>
-                <button type="button" class="btn btn-success">
-                  <%= link_to("اطلاعات کامل", {:controller=>'products', :action=>'show', :id=>'1'}) %>
-                </button>
               </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-              <%= image_tag("cat-car.png", class: 'img-thumb-item', :alt=> 'سمند') %>
-              <div class="caption"  style="text-align: center">
-                <h3>سمند</h3>
-                <p class="p-thumb">خودرو سواری سمند مدل 1390 به مدت 10 روز امانت داده می شود</p>
-                <button type="button" class="btn btn-success">
-                  <%= link_to("اطلاعات کامل", {:controller=>'products', :action=>'show', :id=>'1'}) %>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
+            <% end %>
+          <% end %>
+        
+      </div>
+    <% end %>
 
 
 </div>

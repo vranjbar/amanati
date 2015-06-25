@@ -22,7 +22,7 @@
         <div class="col-md-8 col-md-pull-3">
 	        <%= f.text_field :name, class: "form-control my_form-control" %> 
 
-            <%= f.select(:category_id, options_for_select({ "کتاب" => "0", "تفریحی" => "1", "لوازم شخصی" => "2", "لوازم الکترونیکی" => "3", "لوازم خانگی" => "4", "تفریحی" => "5", "املاک" => "6", "خودرو" => "7" }, "1"), {}, { class: 'form-control my_form-control' }) %>	        
+            <%= f.select(:category_id, options_for_select({ "کتاب" => "1", "تفریحی" => "2", "لوازم شخصی" => "3", "لوازم الکترونیکی" => "4", "لوازم خانگی" => "5", "املاک" => "6", "خودرو" => "7" }, "1"), {}, { class: 'form-control my_form-control' }) %>	        
 
 	        <%= f.text_field :price, type: "number", class: "form-control my_form-control", min:"0"  %>
             <%= f.select(:city, options_for_select($myCity, "id"), {}, { class: 'form-control my_form-control' }) %>

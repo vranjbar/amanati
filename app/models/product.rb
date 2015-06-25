@@ -17,6 +17,7 @@ class Product < ActiveRecord::Base
    scope :over_price, lambda { |query| where(["products.price >= ?", "#{query}"])}
    scope :before_date, lambda { |query| where(["products.created_at <= ?",  "#{query}"])}
    scope :after_date, lambda { |query| where(["products.created_at >= ?",  "#{query}"])}
+   scope :search_category, lambda { |query| where(["products.category_id = ?",  "#{query}"])}
 
    # Order by
    scope :newest_first, lambda {order("products.created_at DESC")}

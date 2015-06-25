@@ -11,7 +11,28 @@
     <%= render(:partial => "search_form") %>
 
     <!-- Items -->
-    <div class="row" style="width: auto">
+    <% @product.in_groups_of(3).each do |group| %>
+      <div class="row">
+          <% group.each do |item| %>
+            <% if item %>
+              <div class="col-md-4">
+              <div class="thumbnail">
+                <%= image_tag(item.image, class: 'img-thumb-item', :alt=> item.name) %>
+                <div class="caption"  style="text-align: center">
+                  <h3><%= item.name%></h3>
+                  <p class="p-thumb"><%= item.description %></p>
+                  <button type="button" class="btn btn-success">
+                    <%= link_to("اطلاعات کامل", {:controller=>'products', :action=>'show', :id=>item.id}) %>
+                  </button>
+                </div>
+              </div>
+              </div>
+            <% end %>
+          <% end %>
+        
+      </div>
+    <% end %>
+    <!-- <div class="row" style="width: auto">
         <div class="well well-item">
           <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
@@ -50,5 +71,5 @@
             </div>
           </div>
         </div>
-    </div>
+    </div> -->
 </div>
