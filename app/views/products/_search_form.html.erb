@@ -4,7 +4,7 @@
           <%= label_tag("دنبال چی می گردی؟") %>
     </div>
     <div class="panel-body" style="text-align: center">
-        <%= form_tag(method: "post",:action=> 'search') do %>
+        <%= form_tag(method: "post",:action=> 'search', :controller=> 'products') do %>
           <div class="row">
               <div class="col-md-2 col-md-push-10" >
                 <%= label_tag("عنوان آگهی") %>
@@ -14,7 +14,7 @@
 
               </div>
               <div class="col-md-2 col-md-push-2" style="text-align: left" >
-                 <%= select_tag(:category_id, options_for_select([['انتخاب گروه', '0'],['کتاب', 'کتاب'], ['تفریحی', 'تفریحی'], ['لوازم شخصی', 'لوازم شخصی'], ['لوازم الکترونیکی', 'لوازم الکترونیکی'], ['لوازم خانگی', 'لوازم خانگی'], ['املاک', 'املاک'], ['خودرو', 'خودرو']]), class: 'form-control my_form-control' ) %>
+                 <%= select_tag(:category_id, options_for_select([['انتخاب گروه', '-1'],['کتاب', '0'], ['تفریحی', '1'], ['لوازم شخصی', '2'], ['لوازم الکترونیکی', '3'], ['لوازم خانگی', '4'], ['املاک', '5'], ['خودرو', '6']]), class: 'form-control my_form-control' ) %>
               </div>
               <div class="col-md-2 col-md-pull-2" >
                 <%= select_tag(:city_id, options_for_select($myCity), class: 'form-control my_form-control' ) %>

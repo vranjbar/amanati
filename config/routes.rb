@@ -1,10 +1,10 @@
 Amanati::Application.routes.draw do
 
   # get "products/index"
-  # get "products/show"
-  # get "products/new"
-  # get "products/edit"
-  # get "products/delete"
+   get "products/show"
+   get "products/new"
+   get "products/edit"
+   get "products/delete"
   # get "users/show"
   # get "users/new"
    get "users/edit"

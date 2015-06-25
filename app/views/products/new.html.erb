@@ -6,22 +6,24 @@
     <%= form_for(@product, :url => {:action=> "create"}, :html => {:multipart => true} ) do |f| %>
 
 		<div class="col-md-2 col-md-push-7">
-			<%= f.label :name, "عنوان", class: "product-new-class" %>
-			<%= f.label :user_id, "کد کاربری", class: "product-new-class"  %>
-			<%= f.label :category_id, "انتخاب گروه", class: "product-new-class"  %>
+			<%= f.label :name, "عنوان", class: "product-new-class" %><br/>
+			<%= f.label :category_id, "انتخاب گروه", class: "product-new-class"  %><br/>
 			<%= f.label :price, "قیمت", class: "product-new-class"  %> <br/>
-			<%= f.label :city, "شهر", class: "product-new-class"  %>
-			<%= f.label :phone_number, "شماره تماس", class: "product-new-class"  %>
+			<%= f.label :city, "شهر", class: "product-new-class"  %><br/>
+			<%= f.label :phone_number, "شماره تماس", class: "product-new-class"  %><br/>
 			<%= f.label :email, "ایمیل", class: "product-new-class"  %><br/>
 			<%= f.label :image, "عکس", class: "product-new-class"  %> <br/>
 			<%= f.label :address, "آدرس", class: "product-new-class"  %> <br/><br/><br/><br/>
 			<%= f.label :name, "توضیحات", class: "product-new-class"  %> <br/>
+
+			<%= f.hidden_field :user_id, :value => session[:user_id] %>
     	</div>
 
         <div class="col-md-8 col-md-pull-3">
-	        <%= f.text_field :name, class: "form-control my_form-control" %>        
-	        <%= f.text_field :user_id, class: "form-control my_form-control"  %>
-            <%= f.select(:category_id, options_for_select($myCategory, "id"), {}, { class: 'form-control my_form-control' }) %>	        
+	        <%= f.text_field :name, class: "form-control my_form-control" %> 
+
+            <%= f.select(:category_id, options_for_select({ "کتاب" => "0", "تفریحی" => "1", "لوازم شخصی" => "2", "لوازم الکترونیکی" => "3", "لوازم خانگی" => "4", "تفریحی" => "5", "املاک" => "6", "خودرو" => "7" }, "1"), {}, { class: 'form-control my_form-control' }) %>	        
+
 	        <%= f.text_field :price, type: "number", class: "form-control my_form-control", min:"0"  %>
             <%= f.select(:city, options_for_select($myCity, "id"), {}, { class: 'form-control my_form-control' }) %>
 	        <%= f.text_field :phone_number, pattern: ".{0}|.{11}", class: "form-control my_form-control", placeholder: "09123456789"  %>
