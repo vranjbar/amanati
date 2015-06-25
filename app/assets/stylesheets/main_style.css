@@ -8,7 +8,7 @@ a:link {    text-decoration: none;}
 
 button.btn-login{  background-color: silver;	width: 100px;	}
 
-button.btn-new{ width:100%;}
+.btn-new{ width:100%;}
 
 @font-face {	font-family: 'nassim';	font-weight: normal;	font-style: normal;
   src:url('/assets/nassim-regular.eot');  src:url('/assets/nassim-regular.eot') format('eot'),

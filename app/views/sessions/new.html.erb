@@ -11,9 +11,9 @@
       <%= f.label :password , "رمز ورود"%>
       <%= f.password_field :password, class: 'form-control', :required => true  %></br>
 
-      <%= f.submit "ورود", class: "btn btn-primary btn-signin"%>
+      <%= f.submit "ورود", class: "btn btn-primary btn-new"%>
     <% end %>
 
-    <p>کاربر جدید? <%= link_to "ثبت نام!", :controller =>'users', :action => 'new' %></p>
+    <p>کاربر جدید هستی? <%= link_to "ثبت نام!", :controller =>'users', :action => 'new' %></p>
   </div>
 </div>

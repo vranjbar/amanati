@@ -10,6 +10,9 @@ Amanati::Application.routes.draw do
    get "users/edit"
    get "users/delete"
   root 'main_pages#home'
+  get    'login'   => 'sessions#new'
+  post   'login'   => 'sessions#create'
+  delete 'logout'  => 'sessions#destroy'
   resources :users
   resource :products
 
