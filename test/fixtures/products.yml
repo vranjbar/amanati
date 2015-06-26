@@ -5,6 +5,7 @@
 # below each fixture, per the syntax in the comments below
 #
 sample_product:
+  id: 1254825
   name: sample product
   description: this is example product
   price: 100

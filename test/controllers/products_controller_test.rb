@@ -1,13 +1,18 @@
 require 'test_helper'
 
 class ProductsControllerTest < ActionController::TestCase
-  test "should get index" do
-    get :index
+
+  def setup
+    @product = products(:sample_product)
+  end
+
+  test "should get search" do
+    get :search
     assert_response :success
   end
 
   test "should get show" do
-    get :show
+    get :show, id: @product 
     assert_response :success
   end
 
@@ -17,12 +22,7 @@ class ProductsControllerTest < ActionController::TestCase
   end
 
   test "should get edit" do
-    get :edit
-    assert_response :success
-  end
-
-  test "should get delete" do
-    get :delete
+    get :edit, id: @product 
     assert_response :success
   end
 

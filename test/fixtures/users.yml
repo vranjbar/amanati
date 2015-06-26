@@ -5,6 +5,7 @@
 # below each fixture, per the syntax in the comments below
 #
 example_user:
+  id: 1254825
   user_name: exm_user	
   name: Example User
   email: user@example.ir
