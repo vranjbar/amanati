@@ -10,6 +10,9 @@
     <!-- Search form -->
     <%= render(:partial => "search_form") %>
 
+    <% if @product.any? == false %>
+      <center style = "font-size:14pt"> <%= "هیچ نتیجه ای یافت نشد"%> </center>
+    <% end %>
     <!-- Items -->
     <% @product.in_groups_of(3).each do |group| %>
       <div class="row">
@@ -32,44 +35,4 @@
         
       </div>
     <% end %>
-    <!-- <div class="row" style="width: auto">
-        <div class="well well-item">
-          <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-              <%= image_tag("cat-car.png", class: 'img-thumb-item', :alt=> 'سمند') %>
-              <div class="caption"  style="text-align: center">
-                <h3>سمند</h3>
-                <p class="p-thumb">خودرو سواری سمند مدل 1390 به مدت 10 روز امانت داده می شود</p>
-                <button type="button" class="btn btn-success">
-                  <%= link_to("اطلاعات کامل", {:controller=>'products', :action=>'show', :id=>'1'}) %>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-              <%= image_tag("cat-car.png", class: 'img-thumb-item', :alt=> 'سمند') %>
-              <div class="caption"  style="text-align: center">
-                <h3>سمند</h3>
-                <p class="p-thumb">خودرو سواری سمند مدل 1390 به مدت 10 روز امانت داده می شود</p>
-                <button type="button" class="btn btn-success">
-                  <%= link_to("اطلاعات کامل", {:controller=>'products', :action=>'show', :id=>'1'}) %>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-              <%= image_tag("cat-car.png", class: 'img-thumb-item', :alt=> 'سمند') %>
-              <div class="caption"  style="text-align: center">
-                <h3>سمند</h3>
-                <p class="p-thumb">خودرو سواری سمند مدل 1390 به مدت 10 روز امانت داده می شود</p>
-                <button type="button" class="btn btn-success">
-                  <%= link_to("اطلاعات کامل", {:controller=>'products', :action=>'show', :id=>'1'}) %>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div> -->
 </div>

@@ -5,54 +5,61 @@ class ProductsController < ApplicationController
   def search   
   #initializi
     @product = nil
+    @searched = false
 
-    if params[:title] != nil
+    if params[:title] != nil && params[:title] != ""
       @product = Product.search_name(params[:title])
+      @searched = true
     end
 
-    if params[:category_id] != nil
-      @category = Category.get_id(params[:category_id])
-      if @product == nil
-        @product = Product.search_category(@category.id)
+    if params[:category_id] != nil && params[:category_id] != "0"
+      @searched = true
+      if @product == nil || @product.any? == false
+        @product = Product.search_category(params[:category_id])
       else
-        @product = @product.search_category(@category.id)
+        @product = @product.search_category(params[:category_id])
       end
     end
 
-    if params[:city_id] != nil
-      if @product == nil
+    if params[:city_id] != nil && params[:city_id] != "انتخاب شهر"
+      @searched = true
+      if @product == nil || @product.any? == false
         @product = Product.search_city(params[:city_id])
       else
         @product = @product.search_city(params[:city_id])
       end
     end
 
-    if params[:priceStart] != nil
-      if @product == nil
+    if params[:priceStart] !=nil && params[:priceStart] != ""
+      @searched = true
+      if @product == nil || @product.any? == false
         @product = Product.over_price(params[:priceStart])
       else
         @product = @product.over_price(params[:priceStart])
       end
     end
 
-    if params[:priceEnd] != nil
-      if @product == nil
+    if params[:priceEnd] != nil && params[:priceEnd] != ""
+      @searched = true
+      if @product == nil || @product.any? == false
         @product = Product.under_price(params[:priceEnd])
       else
         @product = @product.under_price(params[:priceEnd])
       end
     end
 
-    if params[:dateStart] != nil
-      if @product == nil
+    if params[:dateStart] != nil && params[:dateStart] != ""
+      @searched = true
+      if @product == nil || @product.any? == false
         @product = Product.after_date(params[:dateStart])
       else
         @product = @product.after_date(params[:dateStart])
       end
     end
 
-    if params[:dateEnd] != nil
-      if @product == nil
+    if params[:dateEnd] != nil && params[:dateEnd] != ""
+      @searched = true
+      if @product == nil || @product.any? == false
         @product = Product.before_date(params[:dateEnd])
       else
         @product = @product.before_date(params[:dateEnd])
@@ -60,31 +67,41 @@ class ProductsController < ApplicationController
     end
 
     ######### sort type
-    if params[:sort_type] == 0
-       if @product == nil
-        @product = Product.newest_first()
+    if params[:sort_type] == "0"
+      if @product == nil || @product.any? == false
+        if @searched == false
+          @product = Product.newest_first()
+        end
       else
         @product = @product.newest_first()
       end
-    elsif params[:sort_type] == 1
-      if @product == nil
-        @product = Product.oldest_first()
+    elsif params[:sort_type] == "1"
+      if @product == nil || @product.any? == false
+        if @searched == false
+          @product = Product.oldest_first()
+        end
       else
         @product = @product.oldest_first()
       end
-    elsif params[:sort_type] == 2
-      if @product == nil
-        @product = Product.lowest_price_first()
+    elsif params[:sort_type] == "2"
+      if @product == nil || @product.any? == false
+        if @searched == false
+          @product = Product.lowest_price_first()
+        end
       else
         @product = @product.lowest_price_first()
       end
-    elsif params[:sort_type] == 1
-      if @product == nil
-        @product = Product.highest_price_first()
+    elsif params[:sort_type] == "3"
+      if @product == nil || @product.any? == false
+        if @searched == false
+          @product = Product.highest_price_first()
+        end
       else
         @product = @product.highest_price_first()
       end
-    else
+    end
+
+    if @searched == false && @product == nil
       @product = Product.newest_first()
     end
   end
