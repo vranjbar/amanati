@@ -99,7 +99,7 @@ class ProductsController < ApplicationController
     if logged_in?
       @product = Product.new
     else
-      flash[:error] = "برای ثبت آگهی می بایست وارد حساب کاربری شوید.."
+      flash[:danger] = "برای ثبت آگهی می بایست وارد حساب کاربری شوید."
       render 'sessions/new'
     end
   end
