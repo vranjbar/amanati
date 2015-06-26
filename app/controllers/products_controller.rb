@@ -135,6 +135,18 @@ class ProductsController < ApplicationController
     @product = Product.find_by_id(params[:id])
   end
 
+  def update
+    @product = Product.find(params[:id])
+      if @product.update_attributes(product_params)
+        flash[:success] = "مشخصات امانتی با موفقیت ویرایش شد"
+        redirect_to(:action=>'show', :id => params[:id])
+      else
+        flash[:danger] = "در ثبت اطلاعات خطایی رخ داد. لطفا دوباره تلاش کنید."
+        redirect_to(:action=>'edit', :id => params[:id])
+      end
+
+  end
+
   def edit_choose
     @user_products = Product.where(user_id: params[:id])
   end

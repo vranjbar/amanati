@@ -2,6 +2,10 @@ class User < ActiveRecord::Base
 	has_many :products
 	has_many :comments
 
+
+  mount_uploader :photo, PhotoUploader
+
+  
 	before_save   :downcase_email
 	before_save   :downcase_user_name
   	# before_create :create_activation_digest
