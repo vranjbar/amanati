@@ -108,7 +108,7 @@ class ProductsController < ApplicationController
 
   def show
     @show_product = Product.find(params[:id])
-    @other_product = Product.search_category(@show_product.category_id)
+    @other_product = Product.search_category(@show_product.category_id).where("id != ?", @show_product.id)
   end
 
   def new

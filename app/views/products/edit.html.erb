@@ -9,7 +9,6 @@
 
 		<div class="col-md-2 col-md-push-8">
 			<%= f.label :name, "عنوان", class: "product-new-class" %> <br/>
-			<%= f.label :user_id, "کد کاربری", class: "product-new-class"  %> <br/>
 			<%= f.label :category_id, "انتخاب گروه", class: "product-new-class"  %> <br/>
 			<%= f.label :price, "قیمت", class: "product-new-class"  %> <br/>
 			<%= f.label :city, "شهر", class: "product-new-class"  %> <br/>
@@ -21,9 +20,8 @@
     	</div>
 
         <div class="col-md-6">
-	        <%= f.text_field :name, class: "form-control my_form-control" %>        
-	        <%= f.text_field :user_id, class: "form-control my_form-control"  %>
-            <%= f.select(:category_id, options_for_select($myCategory, "id"), {}, { class: 'form-control my_form-control' }) %>	        
+	        <%= f.text_field :name, class: "form-control my_form-control" %> 
+            <%= f.select(:category_id, options_for_select({ "کتاب" => "1", "تفریحی" => "2", "لوازم شخصی" => "3", "لوازم الکترونیکی" => "4", "لوازم خانگی" => "5", "املاک" => "6", "خودرو" => "7" }, @product.category_id), {}, { class: 'form-control my_form-control' }) %>	        
 	        <%= f.text_field :price, type: "number", class: "form-control my_form-control", min:"0"  %>
             <%= f.select(:city, options_for_select($myCity, "id"), {}, { class: 'form-control my_form-control' }) %>
 	        <%= f.text_field :phone_number, pattern: ".{0}|.{11}", class: "form-control my_form-control", placeholder: "09123456789"  %>
@@ -35,7 +33,7 @@
         </div>        	
         <div class="col-md-4 col-md-pull-8">
         	<div class="thumbnail">
-        		<%= image_tag("cat-car.png", class: 'img-item', :alt=> '') %>
+        		<%= image_tag((@product.photo.url if @product.photo?), class: 'img-item', :alt=> '') %>
       		</div>        	
         </div>
 

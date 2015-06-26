@@ -20,13 +20,21 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.new 
+    @user = User.find(session[:user_id])
   end
 
   def delete
   end
 
   def update
+    @user = User.find(session[:user_id])
+      if @user.update_attributes(user_params)
+        flash[:success] = "مشخصات کاربری با موفقیت ویرایش شد"
+        redirect_to(:action=>'show', :id => session[:user_id])
+      else
+        flash[:danger] = "در ثبت اطلاعات خطایی رخ داد. لطفا دوباره تلاش کنید."
+        redirect_to(:action=>'edit', :id => session[:user_id])
+      end
 
   end
   
