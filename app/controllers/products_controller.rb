@@ -121,7 +121,8 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(product_params)   
+    if logged_in?
+      @product = Product.new(product_params)   
       if @product.save
         flash[:success] = "آگهی مورد نظر ثبت گردید."
         redirect_to(:action=>'show', :id => @product.id)
@@ -129,19 +130,58 @@ class ProductsController < ApplicationController
         flash[:success] = "خطا"
         render 'new'
       end
+    else
+      flash[:danger] = "لطفا وارد حساب کاربری خود شوید."
+      render 'sessions/new'
+    end
   end
 
   def edit
-    @product = Product.find_by_id(params[:id])
+    if logged_in?
+      @product = Product.find_by_id(params[:id])
+    else
+      flash[:danger] = "لطفا وارد حساب کاربری خود شوید."
+      render 'sessions/new'
+    end
+    
+  end
+
+  def update
+    if logged_in?
+      @product = Product.find(params[:id])
+      if @product.update_attributes(product_params)
+        flash[:success] = "مشخصات امانتی با موفقیت ویرایش شد"
+        redirect_to(:action=>'show', :id => params[:id])
+      else
+        flash[:danger] = "در ثبت اطلاعات خطایی رخ داد. لطفا دوباره تلاش کنید."
+        redirect_to(:action=>'edit', :id => params[:id])
+      end
+    else
+      flash[:danger] = "لطفا وارد حساب کاربری خود شوید."
+      render 'sessions/new'
+    end
+    
+
   end
 
   def edit_choose
-    @user_products = Product.where(user_id: params[:id])
+    if logged_in?
+      @user_products = Product.where(user_id: params[:id])
+    else
+      flash[:danger] = "لطفا وارد حساب کاربری خود شوید."
+      render 'sessions/new'
+    end
   end
 
   def delete
-    product = Product.find(params[:id]).destroy
-    redirect_to(:action => 'edit_choose')
+    if logged_in?
+      product = Product.find(params[:id]).destroy
+      redirect_to(:action => 'edit_choose')
+    else
+      flash[:danger] = "لطفا وارد حساب کاربری خود شوید."
+      render 'sessions/new'
+    end
+    
   end
 
   private
