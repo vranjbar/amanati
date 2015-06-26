@@ -116,13 +116,16 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product = Product.new
+    @product = Product.find_by_id(params[:id])
   end
 
   def edit_choose
+    @user_products = Product.where(user_id: params[:id])
   end
 
   def delete
+    product = Product.find(params[:id]).destroy
+    redirect_to(:action => 'edit_choose')
   end
 
   private

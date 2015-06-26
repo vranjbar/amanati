@@ -25,6 +25,10 @@ class UsersController < ApplicationController
 
   def delete
   end
+
+  def update
+
+  end
   
   private
     def user_params

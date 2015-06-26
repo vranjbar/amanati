@@ -15,15 +15,17 @@
             <td>ویرایش</td>
             <td>حذف</td>            
           </tr>
-          <tr>
-            <td>bbsdasd</td>
-            <td>bbdas</td>
-            <td>bbsdasd</td>
-            <td>bbdas</td>
-            <td><%= link_to image_tag("display.png", :width=>'20', :alt=> 'display'), {:action => 'edit', :controller => 'products'} %></td>
-            <td><%= link_to image_tag("edit.png", :width=>'20', :alt=> 'edit'), {:action => 'edit', :controller => 'products'} %></td>
-            <td><%= link_to image_tag("delete.png", :width=>'20', :alt=> 'delete'), {:action => 'delete', :controller => 'products'} %></td>
-          </tr>
+          <% @user_products.each do |item| %>
+            <tr>
+              <td><%= item.name%></td>
+              <td><%= Category.find_by_id(item.category_id).name %></td>
+              <td><%= item.price%></td>
+              <td><%= item.city%></td>
+              <td><%= link_to image_tag("display.png", :width=>'20', :alt=> 'display'), {:action => 'show', :controller => 'products', :id => item.id} %></td>
+              <td><%= link_to image_tag("edit.png", :width=>'20', :alt=> 'edit'), {:action => 'edit', :controller => 'products', :id => item.id} %></td>
+              <td><%= link_to image_tag("delete.png", :width=>'20', :alt=> 'delete'), {:action => 'delete', :controller => 'products', :id => item.id} %></td>
+            </tr>
+            <% end %>
         </table>
 
   </div>
