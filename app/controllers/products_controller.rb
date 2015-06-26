@@ -115,7 +115,7 @@ class ProductsController < ApplicationController
     if logged_in?
       @product = Product.new
     else
-      flash[:error] = "برای ثبت آگهی می بایست وارد حساب کاربری شوید.."
+      flash[:danger] = "برای ثبت آگهی می بایست وارد حساب کاربری شوید."
       render 'sessions/new'
     end
   end
@@ -146,6 +146,6 @@ class ProductsController < ApplicationController
 
   private
     def product_params
-      params.require(:product).permit(:name, :category_id, :user_id, :description, :price, :city, :address, :phone_number,:email, nil, :image, nil)
+      params.require(:product).permit(:name, :category_id, :user_id, :description, :price, :city, :address, :phone_number,:email, nil, :photo, nil)
     end
 end

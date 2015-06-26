@@ -28,7 +28,7 @@
             <%= f.select(:city, options_for_select($myCity, "id"), {}, { class: 'form-control my_form-control' }) %>
 	        <%= f.text_field :phone_number, pattern: ".{0}|.{11}", class: "form-control my_form-control", placeholder: "09123456789"  %>
 			<%= f.text_field :email, type: "email", class: "form-control my_form-control", placeholder: "email@temp.com"  %>
-			<%= f.file_field :image, accept: 'image/png,image/gif,image/jpeg, image/jpg, image/tif' %>
+			<%= f.file_field :photo, accept: 'image/png,image/gif,image/jpeg, image/jpg, image/tif' %>
 	        <%= f.text_area :address, class: "form-control my_form-control", size: "60x3" %>
 			<%= f.text_area :description, class: "form-control my_form-control", size: "60x3" %>
 	        <%= f.submit "درج", class: "btn btn-success" %>
