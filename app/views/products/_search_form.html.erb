@@ -10,11 +10,11 @@
                 <%= label_tag("عنوان آگهی") %>
               </div>
               <div class="col-md-2 col-md-push-6" >
-                <%= text_field_tag("title","عنوان", class: 'form-control') %>
+                <%= text_field_tag("title",nil, placeholder: 'عنوان', class: 'form-control') %>
 
               </div>
               <div class="col-md-2 col-md-push-2" style="text-align: left" >
-                 <%= select_tag(:category_id, options_for_select([['انتخاب گروه', '-1'],['کتاب', '0'], ['تفریحی', '1'], ['لوازم شخصی', '2'], ['لوازم الکترونیکی', '3'], ['لوازم خانگی', '4'], ['املاک', '5'], ['خودرو', '6']]), class: 'form-control my_form-control' ) %>
+                 <%= select_tag(:category_id, options_for_select([['انتخاب گروه', '0'],['کتاب', '1'], ['تفریحی', '2'], ['لوازم شخصی', '3'], ['لوازم الکترونیکی', '4'], ['لوازم خانگی', '5'], ['املاک', '6'], ['خودرو', '7']]), class: 'form-control my_form-control' ) %>
               </div>
               <div class="col-md-2 col-md-pull-2" >
                 <%= select_tag(:city_id, options_for_select($myCity), class: 'form-control my_form-control' ) %>
