@@ -1,7 +1,6 @@
 class ProductsController < ApplicationController
   layout "main_layout"
-  $myCity =  ['تهران','اراک', 'اردبیل', 'اصفهان', 'اهواز', 'ایلام', 'بجنورد', 'بندرعباس', 'بوشهر', 'بیرجند', 'ارومیه', 'تبریز', 'خرم آباد', 'رشت', 'زاهدان', 'زنجان', 'ساری', 'سمنان', 'سنندج', 'شهرکرد', 'شیراز', 'قزوین', 'قم', 'کرج', 'کرمان', 'کرمانشاه', 'گرگان', 'مشهد', 'همدان', 'یاسوج', 'یزد']
-  $myCategory =  ['کتاب', 'تفریحی', 'لوازم شخصی', 'لوازم الکترونیکی', 'لوازم خانگی', 'املاک', 'خودرو']
+  $myCity =  ['انتخاب شهر','تهران','اراک', 'اردبیل', 'اصفهان', 'اهواز', 'ایلام', 'بجنورد', 'بندرعباس', 'بوشهر', 'بیرجند', 'ارومیه', 'تبریز', 'خرم آباد', 'رشت', 'زاهدان', 'زنجان', 'ساری', 'سمنان', 'سنندج', 'شهرکرد', 'شیراز', 'قزوین', 'قم', 'کرج', 'کرمان', 'کرمانشاه', 'گرگان', 'مشهد', 'همدان', 'یاسوج', 'یزد']
   
   def search   
   #initializi
@@ -116,13 +115,16 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product = Product.new
+    @product = Product.find_by_id(params[:id])
   end
 
   def edit_choose
+    @user_products = Product.where(user_id: params[:id])
   end
 
   def delete
+    product = Product.find(params[:id]).destroy
+    redirect_to(:action => 'edit_choose')
   end
 
   private
