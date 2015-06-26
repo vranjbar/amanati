@@ -13,7 +13,7 @@
   <div class="well well-item">
     <div class="col-md-4">
       <div class="thumbnail">
-        <%= image_tag(@show_product.photo.url, class: 'img-item', :alt=> 'mkjhuygtfdr') %>
+        <%= image_tag((@show_product.photo.url  if @show_product.photo?) , class: 'img-item', :alt=> 'mkjhuygtfdr') %>
       </div>
 
     </div>
@@ -37,7 +37,7 @@
             <% if item %>
               <div class="col-md-4">
               <div class="thumbnail">
-                <%= image_tag(item.image, class: 'img-thumb-item', :alt=> item.name) %>
+                <%= image_tag((item.photo.url  if item.photo? ), class: 'img-thumb-item', :alt=> item.name) %>
                 <div class="caption"  style="text-align: center">
                   <h3><%= item.name%></h3>
                   <p class="p-thumb"><%= item.description %></p>
