@@ -1,36 +1,39 @@
 <% @page_title = "نمایش مشخصات" %>
 
 <div class="users show">
-	<h2> Show User </h2>
+	<h3> نمایش مشخصات </h3>
 
-	<table summary = "User detail view">
-		<tr>
-			<th>نام کاربری</th>
-			<td><%= @user.user_name %></td>
-		</tr>
-		<tr>
-			<th>نام و نام خانوادگی</th>
-			<td><%= @user.name %></td>
-		</tr>
-		<tr>
-			<th>رایانامه</th>
-			<td><%= @user.email %></td>
-		</tr>
-		<tr>
-			<th>استان</th>
-			<td><%= @user.province %></td>
-		</tr>
-		<tr>
-			<th>شهر</th>
-			<td><%= @user.city %></td>
-		</tr>
-		<tr>
-			<th>آدرس</th>
-			<td><%= @user.address %></td>
-		</tr>
-		<tr>
-			<th>شماره تماس</th>
-			<td><%= @user.phone_number %></td>
-		</tr>
-	</table>
+	<div class="row" style="line-height:18pt;">
+		<div class="col-md-3" style="font-weight:bold">
+			<div class="thumbnail">
+     		   <%= image_tag("my-profile.png", class: 'img-item', :alt=> 'mkjhuygtfdr') %>
+		    </div>				
+			<div class="row" style="font-weight:bold; margin-left: auto; margin-right: auto; width: 75%;">	
+				<%= link_to image_tag("edit_user.png", :width=>'64', :height=>'64', :alt=> 'navbar logo'), {:action => 'edit', :controller => 'users', :id => session[:user_id]} %>
+				<%= link_to("ویرایش مشخصات", {:controller=>'users', :action=>'edit',  :id => session[:user_id]}) %>
+			</div>
+			<div class="row"  style="font-weight:bold; margin-left: auto; margin-right: auto; width: 75%; margin-top:30px">
+				<%= link_to image_tag("advertising.png", :width=>'64', :height=>'64', :alt=> 'navbar logo'), {:action => 'show', :controller => 'products', :id => session[:user_id]} %>
+				<%= link_to("امانتی های ثبت شده", {:controller=>'products', :action=>'show', :id => session[:user_id]}) %>
+			</div>
+		</div>		
+		<div class="col-md-7">
+			<p><%= @user.name %></p>
+			<p><%= @user.user_name %></p>
+			<p><%= @user.phone_number %></p>
+			<p><%= @user.email %></p>
+			<p><%= @user.province %></p>
+			<p><%= @user.city %></p>
+			<p><%= @user.address %></p>
+		</div>
+		<div class="col-md-2" style="font-weight:bold">
+			<p>نام:</p>
+			<p>نام کاربری:</p>
+			<p>رایانامه:</p>
+			<p>شماره تلفن:</p>
+			<p>استان:</p>
+			<p>شهر:</p>
+			<p>آدرس:</p>
+		</div>		
+	</div>
 </div>
